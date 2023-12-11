@@ -3,27 +3,25 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+In de huidige zorgcontext is de implementatie van geavanceerde technologische oplossingen cruciaal om de communicatie tussen zorgvragers en student-zorgverleners te optimaliseren. Mijn aandacht is specifiek gericht op spraak-naar-tekstmodellen, met een specifieke focus op Vlaamse een-op-eengesprekken, waarvan de potentiële meerwaarde ligt in het vergroten van de efficiëntie en toegankelijkheid van zorginteracties.
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+De voornaamste doelgroep van mijn onderzoek bestaat uit studenten in de zorgsector en zorgvragers die deelnemen aan 1 op 1 gespreken. Door deze specifieke doelgroep te selecteren, beoog ik een nauwkeurige afbakening van het onderzoeksonderwerp, waardoor de bevindingen direct toepasbaar zijn binnen hun dagelijkse praktijk.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
+De kernuitdaging binnen dit onderzoek schuilt in het identificeren van geschikte spraak-naar-tekstmodellen die specifiek zijn afgestemd op de Vlaamse taal en de context van zorginteracties. De centrale onderzoeksvraag die als leidraad fungeert, luidt als volgt: "Hoe kunnen spraak-naar-tekstmodellen doeltreffend worden ingezet voor het transcriberen van Vlaamse een-op-eengesprekken in een zorgcontext?"
 
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Naast de opgestelde scriptie streef ik naar een eindresultaat dat als succesvol kan worden beschouwd, bijvoorbeeld in de vorm van een proof-of-concept van een spraak-naar-tekstmodel geoptimaliseerd voor Vlaamse zorggesprekken. Hiermee beoog ik tastbare verbeteringen te bewerkstelligen in de toepassing van spraaktechnologie binnen de specifieke context van de Vlaamse zorg.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
+
+Vanwege de uitgebreide onderzoeken die eerder zijn uitgevoerd door andere studenten, zal dit onderzoek zich niet hoofdzakelijk richten op de verduidelijking van elderspeak; in plaats daarvan zal de focus liggen op het identificeren van de meest geschikte en doeltreffende spraak-naar-tekstmodellen die momenteel beschikbaar zijn. Het primaire doel is om modellen te verkennen die bekwaam zijn in het efficiënt omzetten van dialogen tussen verpleegkundigen en oudere patiënten naar tekstuele representaties. Hun middelen zullen echter worden ingezet om dit onderzoek verder te ontwikkelen, waarbij diepgaande analyses en relevante tests worden uitgevoerd.
+
+In deze context wordt verwezen naar het werk van Standaert, Victor ("Nursery Tone Monitor"), Beeckman, Glenn ("Nursery Tone Monitor: Software-Based Detection of Elderspeak"), en De Gussem, Sibian ("Nursery Tone Monitor: Detecting Elderspeak via AI"). Erkenning wordt gegeven aan hun bijdragen, die een solide basis vormen voor het initiëren van het huidige onderzoeksproject.
+
+Mijn rol in deze onderneming omvat het verfijnen van bestaande methodologieën door grondige analyses uit te voeren en verschillende modellen te testen. Het doel is om het meest geschikte model af te leiden dat de nauwkeurigheid van de transcriptie verbetert, met als uiteindelijke doel de toepasbaarheid ervan te vergemakkelijken voor studenten in de gezondheidszorg. Het beoogde traject omvat de mogelijke implementatie van een mobielvriendelijke front-end, waardoor gebruikers de monitor naadloos kunnen uitvoeren zonder afhankelijk te zijn van desktopplatforms.
 
 Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 
@@ -47,26 +45,52 @@ Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur v
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
+Dit onderzoek richt zich op het evalueren van diverse speech-to-textmodellen om kenmerken van secondary babytalk te identificeren in gesprekken tussen zorgvragers en studentzorgverleners. De methodologie is opgedeeld in drie hoofdfasen:
+\subsection{Fase 1: Applicatie opbouwen}
+\subsubsection{Backend}
+De backend van de applicatie heeft de verantwoordelijkheid om een invoer te verwerken, wat in dit geval een geluidsopname van het gesprek is. Vervolgens maakt het een API-oproep naar verschillende speech-to-textmodellen, afhankelijk van welk model de gebruiker heeft geselecteerd. Na het verkrijgen van de respons van het gekozen model, stuurt de backend deze respons door naar de frontend, waar deze verder wordt verwerkt. In essentie fungeert de backend als een tussenliggende component die de communicatie tussen de frontend en de verschillende speech-to-textmodellen mogelijk maakt.
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+\begin{quote}
+    “Anybody who comes to you and says he has a perfect language is either naive or a salesman.” \\
+    \textemdash Bjarne Stroustrup
+\end{quote}
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+De optimale programmeertaal voor backend-ontwikkeling, rekening houdend met mijn achtergrond en mijn streven naar verdere vaardigheidsontwikkeling, omvat het gebruik van Java in combinatie met Spring Boot. Gezien mijn aanzienlijke ervaring met Java, is deze keuze bijzonder voordelig. Bovendien biedt deze voorkeur potentiële voordelen voor studenten en onderzoekers die zich voor het eerst bezighouden met Java-programmering, met name in het kader van hun initiële betrokkenheid bij Speech to text Recognition.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+Het is echter van belang om Python te erkennen als een zeer aanbevolen programmeertaal voor AI-projecten. Deze keuze sluit aan bij het inzichtelijke perspectief van Bjarne Stroustrup, waarbij wordt onderkend dat er geen universele perfecte programmeertaal bestaat. De nadruk wordt gelegd op het selecteren van talen in overeenstemming met specifieke vereisten en bekwaamheden, rekening houdend met de dynamische en evoluerende aard van de technologische context.
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+Python has emerged as a versatile programming language for AI and data science due to its simplicity, large community, extensive libraries, and integration capabilities. Its readability and robustness make it an ideal choice for beginners and experienced developers alike. With Python’s ever-growing ecosystem, there is no doubt that it will continue to play a crucial role in the field of AI and data \autocite{Hill2023}.
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+\subsubsection{Frontend}
+Daarentegen is het front-end, of dit nu op een mobiel of webplatform is, ontworpen om de gebruiker in staat te stellen verschillende beschikbare modellen te bekijken en een keuze te maken. Vervolgens vergemakkelijkt het front-end het opnemen van een gesprek. Zodra het opnameproces is afgerond en de backend een reactie levert, heeft het front-end de taak om dit resultaat op een manier te presenteren die bevorderlijk is voor de analyse en uitgebreide rapportage van het gesprek. Dit houdt in dat er een interface wordt geboden waarmee de gebruiker de verwerkte gespreksgegevens effectief kan onderzoeken en inzichten kan afleiden
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\subsection{Fase 2: Evaluatie en Selectie van Modellen}
+In deze fase van het onderzoek wordt een reeks specifieke stappen ondernomen om de geschiktheid van verschillende speech-to-textmodellen te beoordelen en uiteindelijk het meest geschikte model te selecteren voor verdere analyse.
+\subsubsection{Implementatie van Modellen in de Backend:}
+De geselecteerde speech-to-textmodellen worden geïntegreerd in de backend van de applicatie. Deze implementatie omvat het configureren van de modellen om te communiceren met de applicatie-infrastructuur en het mogelijk maken van verzoeken vanuit de frontend.
 
+\subsubsection{Evaluatie van Modellen:}
+De geïmplementeerde modellen worden onderworpen aan een grondige evaluatie op verschillende criteria:
+\begin{itemize}
+\item Nauwkeurigheid: Het vermogen van het model om gesproken taal accuraat om te zetten naar tekst wordt geëvalueerd. Dit omvat het meten van de juistheid van de transscripties ten opzichte van de originele gespreksopnames.
+
+\item Snelheid: De verwerkingssnelheid van elk model wordt beoordeeld om te zorgen voor een efficiënte omzetting van gesproken woorden naar tekst binnen aanvaardbare tijdsframes.
+
+\item Resourcegebruik: Het gebruik van systeembronnen, zoals geheugen en rekenkracht, wordt geanalyseerd om te waarborgen dat het model efficiënt werkt zonder onnodige belasting van de infrastructuur.
+\end{itemize}
+
+Deze fase is cruciaal omdat het de basis legt voor het gebruik van een specifiek speech-to-textmodel binnen de applicatie, waarbij de nadruk ligt op het waarborgen van optimale prestaties en betrou
+
+\subsection{Fase 3: Dataverzameling en \\ Analyse}
+Het verzamelen van één-op-één-gesprekken tussen Vlaams-sprekende zorgvragers en student-zorgverleners staat centraal in deze fase. Hierbij streven we naar een zorgvuldige samenstelling van een representatieve dataset die een breed scala aan contexten binnen de zorgsector bestrijkt.
+
+In de volgende stap zullen we de geselecteerde speech-to-textmodellen evalueren en testen. Dit omvat de conversie van audiogesprekken naar tekst met behulp van het gekozen spraak-naar-tekstmodel. Om de kwaliteit van de transcripties te waarborgen, zal er ook een handmatige validatie plaatsvinden, uitgevoerd door een medestudent. Verdere details hierover ontvang je later. Deze evaluatie en testfase is cruciaal voor het begrijpen van de prestaties en toepasbaarheid van het gekozen model in de context van ons onderzoek.
+
+In de laatste fase, Fase 5: Conclusies en Aanbevelingen, zullen we een samenvatting presenteren van de bevindingen die zijn verkregen uit ons onderzoek. Dit omvat een gedegen vergelijking van de geëvalueerde modellen. Op basis van deze bevindingen zullen we aanbevelingen formuleren met betrekking tot het meest geschikte model voor integratie in de secondary babytalk-applicatie.
+
+De samenvatting van bevindingen biedt een overzicht van de prestaties en karakteristieken van de onderzochte modellen, terwijl de vergelijking een diepgaande analyse geeft van hun sterke punten en beperkingen. De resulterende aanbevelingen zullen dienen als leidraad voor de keuze van het optimale spraak-naar-tekstmodel dat het meest geschikt is voor de specifieke vereisten van de secondary babytalk-toepassing. Hierdoor streven we naar een effectieve implementatie van spraaktechnologie om de communicatie tussen zorgvragers en student-zorgverleners te verbeteren
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
-
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+In deze sectie van mijn onderzoek, na de uitvoering van de methodologie en testen, verwacht ik dat de resultaten zullen aantonen dat het geselecteerde speech-to-textmodel succesvol is in het identificeren van kenmerken van secondary babytalk in 1-op-1-gesprekken tussen Vlaamssprekende zorgvragers en student-zorgverleners. De geplande grafieken en metingen zullen waarschijnlijk de nauwkeurigheid van het model illustreren, vooral in diverse contexten binnen de zorgsector. Op basis van deze verwachte resultaten concludeer ik mogelijk dat het gekozen model een waardevolle bijdrage kan leveren aan het verbeteren van de communicatie tussen zorgvragers en student-zorgverleners. Dit zou resulteren in aanbevelingen voor de integratie van dit specifieke model in de secondary babytalk-applicatie, waardoor een verhoogde effectiviteit en relevantie worden bereikt in de context van de gezondheidszorg.
 
