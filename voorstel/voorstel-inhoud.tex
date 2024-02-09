@@ -3,35 +3,93 @@
 \section{Introductie}%
 \label{sec:introductie}
 
+In de hedendaagse zorg- en welzijnssector is er een verschuiving zichtbaar van aanbodgestuurde naar persoonsgerichte zorg. Dit houdt in dat zorgverleners zorg op maat bieden, rekening houdend met de unieke behoeften, voorkeuren, wensen en verwachtingen van elke cliënt of patiënt. Persoonsgerichte zorg vereist dat zorgverleners hun communicatiestijl aanpassen aan de zorgvragers, omdat kwaliteitsvol sociaal contact essentieel is en een positieve invloed heeft op zowel de fysieke als mentale gezondheid en levenskwaliteit van zorgvragers.
+Er is echter kritiek op de manier waarop communicatie vaak plaatsvindt tussen zorgverleners en zorgvragers. Deze communicatie wordt soms als ontoereikend en betuttelend beschouwd, waarbij zorgverleners specifiek voor dit onderzoek oudere patiënten, vaak een kinderlijke stijl hanteren, gekenmerkt door een overdreven toonhoogte, eenvoudige taal en het gebruik van verkleinwoorden en troetelnamen, een stijl die bekend staat als 'secondary babytalk'.
 
-In de huidige zorgcontext is de implementatie van geavanceerde technologische oplossingen cruciaal om de communicatie tussen zorgvragers en student-zorgverleners te optimaliseren. Mijn aandacht is specifiek gericht op spraak-naar-tekstmodellen, met een specifieke focus op Vlaamse een-op-eengesprekken, waarvan de potentiële meerwaarde ligt in het vergroten van de efficiëntie en toegankelijkheid van zorginteracties.
+In 2023 vertoont de bevolkingspiramide van het Vlaamse Gewest het kenmerkende profiel van een vergrijzende bevolking, met een toenemend percentage van 65-plussers (21\%) ten opzichte van 2000 (17\%). Dit demografische verandering brengt nieuwe uitdagingen met zich mee in de zorgsector, met name wat betreft de communicatie tussen zorgverleners en zorgbehoevenden in deze leeftijdscategorie.
 
-De voornaamste doelgroep van mijn onderzoek bestaat uit studenten in de zorgsector en zorgvragers die deelnemen aan 1 op 1 gespreken. Door deze specifieke doelgroep te selecteren, beoog ik een nauwkeurige afbakening van het onderzoeksonderwerp, waardoor de bevindingen direct toepasbaar zijn binnen hun dagelijkse praktijk.
-
-De kernuitdaging binnen dit onderzoek schuilt in het identificeren van geschikte spraak-naar-tekstmodellen die specifiek zijn afgestemd op de Vlaamse taal en de context van zorginteracties. De centrale onderzoeksvraag die als leidraad fungeert, luidt als volgt: "Hoe kunnen spraak-naar-tekstmodellen doeltreffend worden ingezet voor het transcriberen van Vlaamse een-op-eengesprekken in een zorgcontext?"
-
-Naast de opgestelde scriptie streef ik naar een eindresultaat dat als succesvol kan worden beschouwd, bijvoorbeeld in de vorm van een proof-of-concept van een spraak-naar-tekstmodel geoptimaliseerd voor Vlaamse zorggesprekken. Hiermee beoog ik tastbare verbeteringen te bewerkstelligen in de toepassing van spraaktechnologie binnen de specifieke context van de Vlaamse zorg.
+De vergrijzing van de bevolking leidt tot een toename in het aantal ouderen die zorg nodig hebben, vaak met specifieke communicatiebehoeften. Dit kan variëren van gehoorproblemen tot cognitieve uitdagingen. Hierin ligt het belang dit mijn onderzoek: Een applicatie ontwikkelen die kenmerken van ‘secondary babytalk’ kan identificeren aan de hand van bepaalde speech-to-text modellen die beschikbaar zijn op de markt. Deze modellen zullen met elkaar vergeleken worden aan de hand van specifieke criteria. Dit zal resulteren dat het meest accurate model verkozen kan worden
+\textcite{Vlaanderen.be}.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
+\subsection{Probleemstelling}
+\begin{quote}
+   `` Hoe kunnen we spraak-naar-tekstmodellen evalueren om te bepalen welk model optimaal presteert voor de specifieke usecase van spraaktranscriptie, met als doel het identificeren en verminderen van 'secondary babytalk' in een-op-een gesprekken tussen zorgverleners en oudere zorgvragers binnen de Vlaamse zorgsector, streven naar een respectvolle en doeltreffende communicatie te bevorderen?''
 
-Vanwege de uitgebreide onderzoeken die eerder zijn uitgevoerd door andere studenten, zal dit onderzoek zich niet hoofdzakelijk richten op de verduidelijking van elderspeak; in plaats daarvan zal de focus liggen op het identificeren van de meest geschikte en doeltreffende spraak-naar-tekstmodellen die momenteel beschikbaar zijn. Het primaire doel is om modellen te verkennen die bekwaam zijn in het efficiënt omzetten van dialogen tussen verpleegkundigen en oudere patiënten naar tekstuele representaties. Hun middelen zullen echter worden ingezet om dit onderzoek verder te ontwikkelen, waarbij diepgaande analyses en relevante tests worden uitgevoerd.
+\end{quote}
 
-In deze context wordt verwezen naar het werk van Standaert, Victor ("Nursery Tone Monitor"), Beeckman, Glenn ("Nursery Tone Monitor: Software-Based Detection of Elderspeak"), en De Gussem, Sibian ("Nursery Tone Monitor: Detecting Elderspeak via AI"). Erkenning wordt gegeven aan hun bijdragen, die een solide basis vormen voor het initiëren van het huidige onderzoeksproject.
+Om deze onderzoeksvraag te kunnen beantwoorden, is een systematische aanpak vereist.
 
-Mijn rol in deze onderneming omvat het verfijnen van bestaande methodologieën door grondige analyses uit te voeren en verschillende modellen te testen. Het doel is om het meest geschikte model af te leiden dat de nauwkeurigheid van de transcriptie verbetert, met als uiteindelijke doel de toepasbaarheid ervan te vergemakkelijken voor studenten in de gezondheidszorg. Het beoogde traject omvat de mogelijke implementatie van een mobielvriendelijke front-end, waardoor gebruikers de monitor naadloos kunnen uitvoeren zonder afhankelijk te zijn van desktopplatforms.
+Daarvoor moet een literatuurstudie worden uitgevoerd. In deze context dienen begrippen gedefinieerd te worden. Allereerst moet beschreven worden wat een speech-to-text model precies inhoudt en waar het zich bevindt in de wereld van kunstmatige intelligentie. Welke modellen zijn beschikbaar op de markt? En wat zijn de criteria om deze modellen te testen?
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+\subsection{Spraak-naar-tekst}
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+Het begrijpen van de nuances tussen termen zoals spraakherkenning, stemherkenning en natuurlijke taalverwerking kan uitdagend zijn. In de loop van mijn onderzoek heb ik een mogelijke verduidelijking geïdentificeerd voor deze conceptuele complexiteit.
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+\autocite{IBM} defineert het als volgt: \\Spraakherkenning, ook wel bekend als automatische spraakherkenning (ASR), computergestuurde spraakherkenning of spraak-naar-tekst, is een functie die een programma in staat stelt menselijke spraak te verwerken en om te zetten in geschreven tekst. Hoewel het vaak verward wordt met stemherkenning, richt spraakherkenning zich op de vertaling van spraak van een verbale vorm naar een tekstuele, terwijl stemherkenning alleen probeert de stem van een individuele gebruiker te identificeren.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+Spraakherkenningsmodellen produceren een transcript van spraak in audiogegevens. Dit transcript kan op zichzelf worden gebruikt of verder worden verwerkt voor andere doeleinden, zoals het gebruik van grote taalmodellen om de inhoud van de spraak te analyseren \autocite{OConnor2023}.
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+Samengevat Spraakherkenning, ook bekend als automatische spraakherkenning (ASR), is de mogelijkheid van een programma om gesproken taal om te zetten naar geschreven tekst.
+
+\subsection{Beschikbaar modellen}
+\subsubsection{Google Speech to Text}
+
+Google Cloud Speech-to-Text is een API van Google Cloud Platform die gesproken taal omzet in geschreven tekst. Het ondersteunt verschillende talen, real-time streaming en batchverwerking. Gebruikers kunnen de service aanpassen voor domeinspecifieke termen en het integreert naadloos met andere Google Cloud-services. De API biedt veilige en nauwkeurige spraakherkenning voor verschillende toepassingen.\autocite{DocsGoogle}
+\subsubsection{AssemblyAI}
+Samengesteld door AI-experts, omvatten de spraak-AI-modellen van AssemblyAI nauwkeurige spraak-naar-tekst voor spraakgegevens (zoals gesprekken, virtuele vergaderingen en podcasts), sprekerdetectie, sentimentanalyse, hoofdstukdetectie, PII-verwijdering en meer \autocite{DocsAssemblyai}.
+\subsection{Criteria}
+%----------TODO THIS NEED TO BE REVIEWED 
+Uiteindelijk komt een juiste evaluatie neer op het aannemen van een wetenschappelijke benadering om ervoor te zorgen dat de resultaten accuraat, herhaalbaar en betrouwbaar zijn. Laten we nu onderzoeken hoe kunnen de gekozen modellen getest worden.
+
+\subsubsection{Word Error Rate (WER)}
+Automatische spraakherkenningssystemen (ASR) hebben de afgelopen tien jaar aanzienlijke vooruitgang geboekt, waarbij de Word Error Rate (WER) naar voren is gekomen als de voornaamste maatstaf voor het evalueren van de prestaties van deze systemen. WER is gebaseerd op het concept van de bewerkingsafstand en kwantificeert de nauwkeurigheid van ASR door de verhouding van invoegingen, verwijderingen en vervangingen ten opzichte van het totale aantal tokens in een zin te berekenen. Deze maatstaf is bijzonder effectief voor talen zoals het Engels, die doorgaans één spelling voor elk woord hebben, waardoor WER de algehele correctheid nauwkeurig kan weerspiegelen door de getranscribeerde tekst te vergelijken met de oorspronkelijke spraak.\\
+\autocite{Raghavan2022}.
+\\De \(WER\) kan berekend worden als volgt:
+
+\begin{equation}
+   WER(w) = \frac{i + d + s}{N_t}
+\end{equation}
+waarbij:
+\begin{itemize}
+    \item \(i\) is het aantal invoegingen
+    \item \(d\) is het aantal verwijderingen
+    \item \(s\) is het aantal substituties
+    \item \(N\) is de totale aantal woorden
+\end{itemize}
+
+In het bijzonder telt WER inserties, waarbij het model een woord transcribeert dat niet aanwezig is, verwijderingen, waarbij het model een woord dat aanwezig is niet transcribeert en substituties, waarbij het model een woord onjuist transcribeert
+\autocite{OConnor2023}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{wer_1}
+    \caption{Een referentietranscript samen met één voorbeeld van elk van de 3 soorten fouten die WER telt \autocite{OConnor2023}.}
+    \label{fig:WER count}
+\end{figure}
+
+WER wordt beïnvloed door verschillende factoren, waaronder technische taal, branchespecifieke termen, accenten en ruis in de audiogegevens. Het herkennen van technische en gespecialiseerde taal vereist extra inspanning, terwijl accenten en diverse audiogegevens mogelijk aangepaste modellen nodig hebben voor nauwkeurige transcriptie. De aanwezigheid van ruis, veelvoorkomend in real-world scenario's zoals telefoongesprekken en diverse omgevingen, vormt een uitdaging voor de nauwkeurigheid van spraakherkenningssystemen \autocite{Gevirtz2018}.
+
+Echter zou WER alleen voldoende zijn als criterium omdat het fouten berekent op hetzelfde niveau, maar omdat het wat vaak niet het geval is moeten we een andere metriek introduceren \autocite{OConnor2023}.
+\subsubsection{Jaro–Winkler distance (JW)}
+
+
+De Jaro-Winkler Distance is een algoritme voor het meten van de gelijkenis tussen twee teksten en wordt voornamelijk gebruikt op het gebied van duplicatiedetectie. Dit algoritme is gebaseerd op het Jaro-Distance algoritme, dat is ontwikkeld door Matthew A. Jaro en later verder ontwikkeld door William E. Winkler en Thibaudeau door de Jaro Distance aan te passen om hogere gewichten te geven aan overeenkomsten in de voorvoegsels. Hoe hoger de waarde van de Jaro-Winkler Distance voor twee teksten is, hoe groter de gelijkenis tussen beide teksten. Een normale waarde van 0 duidt op geen gelijkenis, en een waarde van 1 duidt op de aanwezigheid van exacte overeenkomsten. De Jaro-Winkler-Distance formule wordt gebruikt om de afstand (dj) tussen de twee teksten  S1 en S2 te berekenen \autocite{Brinardi2017}.
+
+De \(JW\) tussen twee strings kan berekend worden als volgt:
+
+\[
+JW = \frac{1}{3} \left( \frac{m}{\text{{length}}(s1)} + \frac{m}{\text{{length}}(s2)} + \frac{m - t}{m} \right)
+\]
+
+waarbij:
+\begin{itemize}
+    \item \(m\) is het aantal overeenkomende karakters
+    \item \(t\) is het aantal transposities
+\end{itemize}
+Anders gezegd Jaro-Winkler similarity is de maatstaf voor gelijkenis tussen twee teksten. De waarde van de Jaro-afstand varieert van 0 tot 1, waarbij 1 betekent dat de teksten identiek zijn en 0 betekent dat er geen gelijkenis is tussen de twee teksten.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -40,57 +98,50 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
-
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 Dit onderzoek richt zich op het evalueren van diverse speech-to-textmodellen om kenmerken van secondary babytalk te identificeren in gesprekken tussen zorgvragers en studentzorgverleners. De methodologie is opgedeeld in drie hoofdfasen:
-\subsection{Fase 1: Applicatie opbouwen}
-\subsubsection{Backend}
-De backend van de applicatie heeft de verantwoordelijkheid om een invoer te verwerken, wat in dit geval een geluidsopname van het gesprek is. Vervolgens maakt het een API-oproep naar verschillende speech-to-textmodellen, afhankelijk van welk model de gebruiker heeft geselecteerd. Na het verkrijgen van de respons van het gekozen model, stuurt de backend deze respons door naar de frontend, waar deze verder wordt verwerkt. In essentie fungeert de backend als een tussenliggende component die de communicatie tussen de frontend en de verschillende speech-to-textmodellen mogelijk maakt.
+\subsection{Fase 1: Applicatie opbouwen \\ (November 2023 - Februari 2024)}
+subsubsection{Backend}
+De backend van de applicatie heeft de verantwoordelijkheid om een invoer te verwerken, wat in dit geval een geluidsopname van het gesprek is.
 
-\begin{quote}
-    “Anybody who comes to you and says he has a perfect language is either naive or a salesman.” \\
-    \textemdash Bjarne Stroustrup
-\end{quote}
+Vervolgens maakt het een API-oproep naar verschillende speech-to-textmodellen, afhankelijk van welk model de gebruiker heeft geselecteerd. Na het verkrijgen van de respons van het gekozen model, stuurt de backend deze respons door naar de frontend, waar deze verder wordt verwerkt.
 
-De optimale programmeertaal voor backend-ontwikkeling, rekening houdend met mijn achtergrond en mijn streven naar verdere vaardigheidsontwikkeling, omvat het gebruik van Java in combinatie met Spring Boot. Gezien mijn aanzienlijke ervaring met Java, is deze keuze bijzonder voordelig. Bovendien biedt deze voorkeur potentiële voordelen voor studenten en onderzoekers die zich voor het eerst bezighouden met Java-programmering, met name in het kader van hun initiële betrokkenheid bij Speech to text Recognition.
+In essentie fungeert de backend als een tussenliggende component die de communicatie tussen de frontend en de verschillende speech-to-textmodellen mogelijk maakt.
 
-Het is echter van belang om Python te erkennen als een zeer aanbevolen programmeertaal voor AI-projecten. Deze keuze sluit aan bij het inzichtelijke perspectief van Bjarne Stroustrup, waarbij wordt onderkend dat er geen universele perfecte programmeertaal bestaat. De nadruk wordt gelegd op het selecteren van talen in overeenstemming met specifieke vereisten en bekwaamheden, rekening houdend met de dynamische en evoluerende aard van de technologische context.
+Het is echter van belang om Python te erkennen als een zeer aanbevolen programmeertaal voor AI-projecten. Deze keuze sluit aan bij het inzichtelijke perspectief van Damian hill:
 
-Python has emerged as a versatile programming language for AI and data science due to its simplicity, large community, extensive libraries, and integration capabilities. Its readability and robustness make it an ideal choice for beginners and experienced developers alike. With Python’s ever-growing ecosystem, there is no doubt that it will continue to play a crucial role in the field of AI and data \autocite{Hill2023}.
+Python is uitgegroeid tot een veelzijdige programmeertaal voor kunstmatige intelligentie en datawetenschap, dankzij zijn eenvoud, grote gemeenschap, uitgebreide bibliotheken en naadloze integratiemogelijkheden. De leesbaarheid en robuustheid maken het een ideale keuze voor zowel beginners als ervaren ontwikkelaars. Met het voortdurend groeiende ecosysteem van Python is er geen twijfel dat het een cruciale rol zal blijven spelen in het veld van kunstmatige intelligentie en datawetenschap. \autocite{Hill2023}.
+
+Nochtans is de optimale programmeertaal voor backend-ontwikkeling, rekening houdend met mijn achtergrond en mijn streven naar verdere vaardigheidsontwikkeling, omvat het gebruik van Java in combinatie met Spring Boot. Gezien mijn aanzienlijke ervaring met Java, is deze keuze bijzonder voordelig. Bovendien biedt deze voorkeur potentiële voordelen voor studenten en onderzoekers die zich voor het eerst bezighouden met Java-programmering, met name in het kader van hun initiële betrokkenheid bij Speech to text Recognition.
 
 \subsubsection{Frontend}
-Daarentegen is het front-end, of dit nu op een mobiel of webplatform is, ontworpen om de gebruiker in staat te stellen verschillende beschikbare modellen te bekijken en een keuze te maken. Vervolgens vergemakkelijkt het front-end het opnemen van een gesprek. Zodra het opnameproces is afgerond en de backend een reactie levert, heeft het front-end de taak om dit resultaat op een manier te presenteren die bevorderlijk is voor de analyse en uitgebreide rapportage van het gesprek. Dit houdt in dat er een interface wordt geboden waarmee de gebruiker de verwerkte gespreksgegevens effectief kan onderzoeken en inzichten kan afleiden
+De front-end in deze context kan uiteindelijk een Android-toepassing zijn om de respons van de backend weer te geven. Dit kan verschillende voordelen hebben ten opzichte van een webtoepassing, zoals die in de vorige onderzoek.\\
+\textbf{Offlinefunctionaliteit}:
 
-\subsection{Fase 2: Evaluatie en Selectie van Modellen}
+Een Android-app kan ontworpen worden om offline te werken, waardoor het elderspeak-detectie kan blijven monitoren, zelfs wanneer het apparaat niet is verbonden met internet. Dit is vooral handig in scenario's waar een stabiele internetverbinding niet is gegarandeerd.\\
+\textbf{Gebruiksvriendelijk:}
+
+Een Android-app kan zeer handig zijn bij het werken in de gezondheidszorgsector.
+
+De smartphone kan naar een bepaalde locatie worden meegenomen en vervolgens gebruikt worden om de app-functionaliteit te gebruiken in plaats van te gedwongen worden een desktopcomputer te gebruiken. Bovendien kan de gebruiker een interactieve ervaring krijgen, bijvoorbeeld door meldingen te ontvangen over een proces of functionaliteit.
+\subsection{Fase 2: Evaluatie en Selectie van Modellen \\ (Februari 2024 - Maart 2024)}
 In deze fase van het onderzoek wordt een reeks specifieke stappen ondernomen om de geschiktheid van verschillende speech-to-textmodellen te beoordelen en uiteindelijk het meest geschikte model te selecteren voor verdere analyse.
 \subsubsection{Implementatie van Modellen in de Backend:}
 De geselecteerde speech-to-textmodellen worden geïntegreerd in de backend van de applicatie. Deze implementatie omvat het configureren van de modellen om te communiceren met de applicatie-infrastructuur en het mogelijk maken van verzoeken vanuit de frontend.
 
 \subsubsection{Evaluatie van Modellen:}
-De geïmplementeerde modellen worden onderworpen aan een grondige evaluatie op verschillende criteria:
-\begin{itemize}
-\item Nauwkeurigheid: Het vermogen van het model om gesproken taal accuraat om te zetten naar tekst wordt geëvalueerd. Dit omvat het meten van de juistheid van de transscripties ten opzichte van de originele gespreksopnames.
+De geïmplementeerde modellen worden onderworpen aan een grondige evaluatie op verschillende metrieken zoals in de vorige sectie vermeld wordt.
+Deze fase is cruciaal omdat het de basis legt voor het gebruik van een specifiek speech-to-textmodel binnen de applicatie.
 
-\item Snelheid: De verwerkingssnelheid van elk model wordt beoordeeld om te zorgen voor een efficiënte omzetting van gesproken woorden naar tekst binnen aanvaardbare tijdsframes.
+\subsection{Fase 3: Dataverzameling en \\ Analyse \\ (Maart 2024 - April 2024)}
+Het verzamelen van één-op-één-gesprekken tussen Vlaams-sprekende zorgvragers en student-zorgverleners staat centraal in deze fase. Hierbij streven we naar een zorgvuldige samenstelling van een representatieve dataset die een breed reeks aan contexten binnen de zorgsector bedekt.
 
-\item Resourcegebruik: Het gebruik van systeembronnen, zoals geheugen en rekenkracht, wordt geanalyseerd om te waarborgen dat het model efficiënt werkt zonder onnodige belasting van de infrastructuur.
-\end{itemize}
-
-Deze fase is cruciaal omdat het de basis legt voor het gebruik van een specifiek speech-to-textmodel binnen de applicatie, waarbij de nadruk ligt op het waarborgen van optimale prestaties en betrou
-
-\subsection{Fase 3: Dataverzameling en \\ Analyse}
-Het verzamelen van één-op-één-gesprekken tussen Vlaams-sprekende zorgvragers en student-zorgverleners staat centraal in deze fase. Hierbij streven we naar een zorgvuldige samenstelling van een representatieve dataset die een breed scala aan contexten binnen de zorgsector bestrijkt.
-
-In de volgende stap zullen we de geselecteerde speech-to-textmodellen evalueren en testen. Dit omvat de conversie van audiogesprekken naar tekst met behulp van het gekozen spraak-naar-tekstmodel. Om de kwaliteit van de transcripties te waarborgen, zal er ook een handmatige validatie plaatsvinden, uitgevoerd door een medestudent. Verdere details hierover ontvang je later. Deze evaluatie en testfase is cruciaal voor het begrijpen van de prestaties en toepasbaarheid van het gekozen model in de context van ons onderzoek.
-
-In de laatste fase, Fase 5: Conclusies en Aanbevelingen, zullen we een samenvatting presenteren van de bevindingen die zijn verkregen uit ons onderzoek. Dit omvat een gedegen vergelijking van de geëvalueerde modellen. Op basis van deze bevindingen zullen we aanbevelingen formuleren met betrekking tot het meest geschikte model voor integratie in de secondary babytalk-applicatie.
-
-De samenvatting van bevindingen biedt een overzicht van de prestaties en karakteristieken van de onderzochte modellen, terwijl de vergelijking een diepgaande analyse geeft van hun sterke punten en beperkingen. De resulterende aanbevelingen zullen dienen als leidraad voor de keuze van het optimale spraak-naar-tekstmodel dat het meest geschikt is voor de specifieke vereisten van de secondary babytalk-toepassing. Hierdoor streven we naar een effectieve implementatie van spraaktechnologie om de communicatie tussen zorgvragers en student-zorgverleners te verbeteren
+In de volgende stap zullen we de geselecteerde speech-to-textmodellen evalueren en testen. Dit omvat de conversie van audiogesprekken naar tekst met behulp van het gekozen spraak-naar-tekstmodel. Om de kwaliteit van de transcripties te waarborgen, zal er ook een handmatige validatie plaatsvinden, uitgevoerd door een medestudent. Verdere details hierover ontvang je later. Deze evaluatie en testfase is cruciaal voor het begrijpen van de prestaties en toepasbaarheid van het gekozen model in de context van ons onderzoek.\\
+De samenvatting van bevindingen biedt een overzicht van de prestaties en karakteristieken van de onderzochte modellen, terwijl de vergelijking een diepgaande analyse geeft van hun sterke punten en beperkingen. De resulterende aanbevelingen zullen dienen als leidraad voor de keuze van het optimaal spraak-naar-tekstmodel dat het meest geschikt is voor de specifieke vereisten van de secondary babytalk-toepassing. Hierdoor streven we naar een effectieve implementatie van spraaktechnologie om de communicatie tussen zorgvragers en student-zorgverleners te verbeteren.
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
-In deze sectie van mijn onderzoek, na de uitvoering van de methodologie en testen, verwacht ik dat de resultaten zullen aantonen dat het geselecteerde speech-to-textmodel succesvol is in het identificeren van kenmerken van secondary babytalk in 1-op-1-gesprekken tussen Vlaamssprekende zorgvragers en student-zorgverleners. De geplande grafieken en metingen zullen waarschijnlijk de nauwkeurigheid van het model illustreren, vooral in diverse contexten binnen de zorgsector. Op basis van deze verwachte resultaten concludeer ik mogelijk dat het gekozen model een waardevolle bijdrage kan leveren aan het verbeteren van de communicatie tussen zorgvragers en student-zorgverleners. Dit zou resulteren in aanbevelingen voor de integratie van dit specifieke model in de secondary babytalk-applicatie, waardoor een verhoogde effectiviteit en relevantie worden bereikt in de context van de gezondheidszorg.
+In deze sectie van mijn onderzoek, na de uitvoering van de methodologie en testen, verwacht ik dat de resultaten zullen aantonen dat het geselecteerde speech-to-textmodel succesvol is in het identificeren van kenmerken van secondary babytalk in 1-op-1-gesprekken tussen Vlaams-sprekende zorgvragers en student-zorgverleners. De geplande grafieken en metingen zullen waarschijnlijk de nauwkeurigheid van het model illustreren, vooral in diverse contexten binnen de zorgsector. Op basis van deze verwachte resultaten concludeer ik mogelijk dat het gekozen model een waardevolle bijdrage kan leveren aan het verbeteren van de communicatie tussen zorgvragers en student-zorgverleners. Dit zou resulteren in aanbevelingen voor de integratie van dit specifieke model in de secondary babytalk-applicatie, waardoor een verhoogde effectiviteit en relevantie worden bereikt in de context van de gezondheidszorg.
 
