@@ -9,14 +9,21 @@
 \section{Inleiding}
 
 
-Het hoofdstuk over literatuurstudie vormt een essentieel fundament voor dit onderzoek, omdat het een grondig begrip biedt van het bestaande kennislandschap met betrekking tot het onderwerp. Door een gedegen literatuurstudie uit te voeren, kunnen we verschillende cruciale doelen bereiken die de basis leggen voor ons onderzoek.
+Het hoofdstuk over literatuurstudie vormt een essentieel fundament voor dit onderzoek, diep inzicht ge­eft in wat er al beke­nd is over het onderwe­rp. Door een gedegen literatuurstudie uit te voeren, kunnen we verschillende cruciale doelen bereiken die de basis leggen voor ons onderzoek.
 
-In dit onderzoek wil men nagaan of diverse speech-to-text modellen die momenteel beschikbaar zijn op de markt, met als primair doel het nauwkeurig identificeren van kenmerken die inherent zijn aan 'secondary babytalk'. Door het selecteren van het meest geschikte model en het uitvoeren van benchmarking, wordt beoogd de communicatie tussen zorgverleners en oudere patiënten te verbeteren. De benchmarking zal worden uitgevoerd door de prestaties van de verschillende modellen te vergelijken aan de hand van gevestigde criteria, zoals de Word Error Rate (WER) en de Jaro-Winkler afstand. 
-Door middel van een gedetailleerde analyse van verschillende modellen zullen we inzicht krijgen in hun prestaties en geschiktheid voor het identificeren van 'secondary babytalk'. Dit onderzoek zal resulteren in praktische aanbevelingen voor het selecteren van het meest geschikte model om de communicatie in de zorgsector te verbeteren, wat de algehele kwaliteit van zorg ten goede zal komen.
+In dit onderzoek worden verschillende Automatische spraakherkenning (ASR)  modellen die momenteel op de markt beschikbaar zijn, vergeleken aan de hand van specifieke nauwkeurigheidsmetrieken om het beste model te selecteren voor een nauwkeurigere identificatie van kenmerken van "Secondary Babytalk". Door het selecteren van het meest geschikte model en het uitvoeren van benchmarking, streven we ernaar de communicatie tussen zorgverleners en oudere patiënten te verbeteren. 
+
+
+De benchmarking zal worden uitgevoerd door de prestaties van de verschillende modellen te vergelijken aan de hand van gevestigde criteria, zoals de Word Error Rate (WER) en de Jaro-Winkler afstand. 
+Door middel van een gedetailleerde analyse van verschillende modellen zullen we inzicht krijgen in hun prestaties en geschiktheid voor het identificeren van 'secondary babytalk'. 
+
+
+Dit onderzoek zal resulteren in praktische aanbevelingen voor het selecteren van het meest geschikte model om de communicatie in de zorgsector te verbeteren, wat de algehele kwaliteit van zorg ten goede zal komen.
 %Deze vergelijking zal het onderzoek in staat stellen om het meest geschikte model te identificeren voor het accuraat identificeren van 'secondary babytalk' in de communicatie tussen zorgverleners en oudere patiënten.
 
 
-Alvoerens hierop een antwoord te kunnen bieden, is het van belang inzicht te verwerven in wat er vergeleken dient te worden. Dit kunnen we bewerkstelligen door te antwoorden op de volgende vragen:
+
+Alvorens hierop een antwoord te kunnen bieden, is het van belang inzicht te verwerven in wat er vergeleken dient te worden. Dit kunnen we verwezenlijken door te antwoorden op de volgende vragen:
 \begin{enumerate}[label=\arabic*.]
     \item \textbf{Definitie en Plaatsing van Speech-to-Text Modellen:}
     \begin{itemize}
@@ -27,82 +34,314 @@ Alvoerens hierop een antwoord te kunnen bieden, is het van belang inzicht te ver
     \item \textbf{Beschikbare Modellen op de Markt:}
     \begin{itemize}
         \item Welke specifieke spraak-naar-tekstmodellen zijn momenteel beschikbaar op de markt?
-        \item Hoe verschillen deze modellen in accuratie?
+        %\item Hoe verschillen deze modellen in accuratie?
     \end{itemize}
     
     \item \textbf{Relevante Criteria voor Model Evaluatie:}
     \begin{itemize}
         \item Welke criteria zijn van belang bij het evalueren van spraak-naar-tekstmodellen?
-        \item Hoe kunnen we de prestaties meten aan de hand van zowel kwantitatieve als kwalitatieve aspecten?
-        \item Welke overwegingen zijn cruciaal voor het afstemmen van een model op de specifieke usecase van spraaktranscriptie?
+        \item Hoe kunnen we de prestaties meten aan de hand van kwantitatieve data-analyse?
+        \item Welke overwegingen zijn cruciaal voor het afstemmen van een model op de specifieke case van spraaktransscriptie?
+        %TODO USECASE VERDUIDELIJKEN
     \end{itemize}
 \end{enumerate}
+\section{Secondary Baby Talk}
+\subsection{Definitie}
+
+Secondary Baby Talk, ook bekend als 'Elderspeak' is een vorm van spraak gericht aan oudere volwassenen. Het kenmerkt zich door objectieve aspecten zoals verhoogd volume en hoge toon en subjectieve aspecten zoals een neerbuigende toon. Het onderzoek van \textcite{balsis2006evaluations} onderzoekt hoe mensen die niet direct betrokken zijn bij een gesprek "Elderspeak" beoordelen. een spreekstijl die vaak wordt gebruikt in communicatie met ouderen, en hoe deze beoordeling beïnvloed wordt door de leeftijd van de persoon die spreekt en hun relatie tot de oudere luisteraar. 
+Ondanks de intentie om ouderen te helpen, wordt zowel het gebruik als het ontvangen van 'Elderspeak' negatief beoordeeld. Oudere patiënten worden gezien als minder welwillend, terwijl ontvangers als minder capabel en in een slechtere stemming worden beschouwd. Deze bevindingen benadrukken de negatieve implicaties van 'Elderspeak', ongeacht de leeftijd van de spreker of hun relatie tot de ontvanger. Dit suggereert dat 'Elderspeak' bijdraagt aan negatieve stereotypen en afhankelijkheid bij ouderen.Dit communicatiegedrag, ondanks goede intenties, kan als neerbuigend worden ervaren door ouderen en kan hun zelfrespect, stemming en sociale betrokkenheid negatief beïnvloeden. Onderzoek suggereert dat dit soort spraak ouderen kan doen overkomen als minder competent, wat hun afhankelijkheid kan versterken en bijdraagt aan een negatieve cyclus van afnemende fysieke, cognitieve en functionele status \autocite{balsis2006evaluations}.
+
+
+Een belangrijke bevinding van \textcite{williams2005enhancing} is dat communicatie tussen zorgverleners en oudere patiënten vaak elementen van 'Elderspeak' bevat. Dit duidt op een onevenwichtigheid in de zorgrelatie. waarbij de zorgverlener mogelijk onbewust een taal en toon gebruikt die ouderen infantiliseren of neerbuigend behandelen.
+ Zij beargumenteren dat het minimaliseren van het gebruik van 'Elderspeak' kan bijdragen aan het verbeteren van de communicatieomgeving, het bevorderen van de cognitieve en functionele vaardigheden van ouderen, en uiteindelijk kan leiden tot een hoger welzijnsniveau en een verbeterde levenskwaliteit voor oudere patiënten.
+\subsection{Kenmerken}
+We wijzen op bepaalde kenmerken van 'Elderspeak' die leiden tot het idee dat deze manier van communiceren denigrerend of infantiliserend is wanneer deze wordt gebruikt tijdens interacties met oudere patiënten. 'Elderspeak' kan onder andere gekenmerkt worden door het gebruik van diminutieven, een tragere spraaksnelheid, een hoger volume, een eenvoudigere woordenschat, grammatica en verhoogde intonatie. Deze kenmerken worden vaak onbewust gebruikt in de veronderstelling dat ze de communicatie met oudere patiënten zouden vergemakkelijken of verbeteren \autocite{williams2005enhancing}.
+
+Echter, de praktijk toont aan dat deze aanpak juist contraproductief kan werken. Oudere mensen kunnen zich hierdoor minder competent en gerespecteerd voelen, wat negatieve gevolgen kan hebben voor hun zelfbeeld en welzijn. Het is cruciaal voor zorgverleners en anderen die communiceren met oudere patiënten om bewust te zijn van deze kenmerken en om communicatiestrategieën te ontwikkelen die ouderen als volwaardige gesprekspartners behandelen, hun autonomie erkennen en hun capaciteiten respecteren \autocite{williams2005enhancing}.
+
+\subsection{Gevolgen}
+De gevolgen van 'Elderspraak', zoals besproken in het onderzoek van \textcite{grimme2015understanding}, werpen licht op de impact van deze communicatiestijl op oudere patiënten binnen langdurige zorginstellingen.
+
+
+Hoewel de intentie achter het gebruik van 'Elderspeak' kan zijn om de communicatie te vereenvoudigen en een gevoel van comfort te bieden, onthult de studie dat deze communicatievorm vaak wordt ervaren als neerbuigend en respectloos door de oudere ontvangers. Dit kan leiden tot een vermindering van het zelfrespect van de ouderen en een toename in hun gevoelens van afhankelijkheid en hulpeloosheid. Een significant inzicht uit de studie is dat 'Elderspeak' niet alleen de waardigheid van ouderen kan zich ontwikkelen, maar ook schadelijk kan werken in de zorgverlening. Het kan bijvoorbeeld de waarschijnlijkheid van weerstand tegen zorg verhogen bij individuen met dementie. Deze bevindingen benadrukken het belang van een meer gepersonaliseerde en respectvolle benadering van communicatie, die de autonomie en competentie van oudere patiënten erkent 
+
+Door het bevorderen van een meer respectvolle communicatiestijl kunnen zorgverleners een positievere interactie met oudere patiënten ondersteunen, wat bijdraagt aan een verbeterde kwaliteit van zorg en leven. De resultaten van de studie suggereren een dringende noodzaak voor opleidings- en trainingsprogramma's voor zorgverleners om de bewustwording van de negatieve effecten van 'Elderspeak' te vergroten en vaardigheden te ontwikkelen voor effectievere communicatiepraktijken \autocite{grimme2015understanding}.
+
+ De meeste oudere patiënten geven de voorkeur aan een affirmatieve emotionele toon die zorg en controle op passende wijze in balans brengt, waarbij wordt gecommuniceerd dat de luisteraar bekwaam is om de boodschap te begrijpen en zelfstandig te handelen zoals geïllustreerd in figuur  \ref{fig:voorbeeld_affirmative_toon} \autocite{williams2005enhancing}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{enhancing_communication_with_older_adults.png}
+    \captionsetup{justification=centering}
+    \caption{Een Vergelijking van Communicatiedynamieken: Benaderingen van Zorgverleners met Oudere patiënten \autocite{williams2005enhancing}.}
+    \label{fig:voorbeeld_affirmative_toon}
+\end{figure}
+
 
 \section{Vergrijzing in Vlaanderen}
--Een analyse van de demografische evolutie en de gevolgen van de babyboom in de jaren '60. 
+%TODOEen analyse van de demografische evolutie en de gevolgen van de babyboom in de jaren '60. 
 
-- Toekomstige uitdagingen in de zorgsector door de vergrijzing. 
+%- Toekomstige uitdagingen in de zorgsector door de vergrijzing. 
 
-In de hedendaagse zorg- en welzijnssector is er een verschuiving zichtbaar van aanbodgestuurde naar persoonsgerichte zorg. Dit houdt in dat zorgverleners zorg op maat bieden, rekening houdend met de unieke behoeften, voorkeuren, wensen en verwachtingen van elke cliënt of patiënt. Persoonsgerichte zorg vereist dat zorgverleners hun communicatiestijl aanpassen aan de zorgvragers, omdat kwaliteitsvol sociaal contact essentieel is en een positieve invloed heeft op zowel de fysieke als mentale gezondheid en levenskwaliteit van zorgvragers.
-Er is echter kritiek op de manier waarop communicatie vaak plaatsvindt tussen zorgverleners en zorgvragers. Deze communicatie wordt soms als ontoereikend en betuttelend beschouwd, waarbij zorgverleners specifiek voor dit onderzoek oudere patiënten, vaak een kinderlijke stijl hanteren, gekenmerkt door een overdreven toonhoogte, eenvoudige taal en het gebruik van verkleinwoorden en troetelnamen, een stijl die bekend staat als 'secondary babytalk'.
+In de hedendaagse zorg- en welzijnssector is er een verschuiving zichtbaar van aanbodgestuurde naar persoonsgerichte zorg. Dit houdt in dat zorgverleners zorg op maat bieden, rekening houdend met de unieke behoeften, voorkeuren, wensen en verwachtingen van elke cliënt of patiënt. 
 
-In 2023 vertoont de bevolkingspiramide van het Vlaamse Gewest het kenmerkende profiel van een vergrijzende bevolking, met een toenemend percentage van 65-plussers (21\%) ten opzichte van 2000 (17\%). Dit demografische verandering brengt nieuwe uitdagingen met zich mee in de zorgsector, met name wat betreft de communicatie tussen zorgverleners en zorgbehoevenden in deze leeftijdscategorie.
+Persoonsgerichte zorg vereist dat zorgverleners hun communicatiestijl aanpassen aan de zorgvragers, omdat kwaliteitsvol sociaal contact essentieel is en een positieve invloed heeft op zowel de fysieke als mentale gezondheid en levenskwaliteit van zorgvragers.
+Er is echter kritiek op de manier waarop communicatie vaak plaatsvindt tussen zorgverleners en zorgvragers. Deze communicatie wordt soms als ontoereikend en betuttelend beschouwd, waarbij zorgverleners specifiek voor dit onderzoek oudere patiënten, vaak een kinderlijke stijl hanteren, gekenmerkt door een overdreven toonhoogte, eenvoudige taal en het gebruik van verkleinwoorden en troetelnamen, een stijl die bekend staat als 'Secondary Babytalk' (Bron-hogent)
+\\
+\\
+In 2023 vertoont de bevolkingspiramide van het Vlaamse Gewest het kenmerkende profiel van een vergrijzende bevolking, met een toenemend percentage van 65-plussers (21\%) ten opzichte van 2000 (17\%). Deze demografische verandering brengt nieuwe uitdagingen met zich mee in de zorgsector, met name de communicatie tussen zorgverleners en zorgbehoevenden in deze leeftijdscategorie \autocite{Vlaanderen.be}. 
 
-De vergrijzing van de bevolking leidt tot een toename in het aantal ouderen die zorg nodig hebben, vaak met specifieke communicatiebehoeften. Dit kan variëren van gehoorproblemen tot cognitieve uitdagingen. Hierin ligt het belang dit mijn onderzoek: Een applicatie ontwikkelen die kenmerken van ‘secondary babytalk’ kan identificeren aan de hand van bepaalde speech-to-text modellen die beschikbaar zijn op de markt. Deze modellen zullen met elkaar vergeleken worden aan de hand van specifieke criteria. Dit zal resulteren dat het meest accurate model verkozen kan worden
-\autocite{Vlaanderen.be}.
+%De vergrijzing van de bevolking leidt tot een toename in het aantal ouderen die zorg nodig hebben, vaak met specifieke communicatiebehoeften
+%Dit kan variëren van gehoorproblemen tot cognitieve uitdagingen. Hierin ligt het belang dit mijn onderzoek: Een applicatie ontwikkelen die kenmerken van 'Secondary Babytalk' kan identificeren aan de hand van bepaalde 'Spraak-naar-tekst' modellen die beschikbaar zijn op de markt. Deze modellen zullen met elkaar vergeleken worden aan de hand van specifieke criteria. Dit zal resulteren dat het meest accurate model verkozen kan worden .
+%- Elderspeak: Definitie, voorbeelden, en het belang van aangepaste communicatie met ouderen. 
 \section{Artificiële Intelligentie en Automatische Spraakherkenning}
 
-   - AI en ASR: Een uiteenzetting van de concepten, de verschillen, en hoe ze zich tot elkaar verhouden. 
+\textcite{Fetzer_1990} analyseert kunstmatige intelligentie (AI), waarbij hij de complexiteit van het domein belicht en de uitdagingen bij het definiëren ervan bespreekt. Hij verkent de menselijke oorsprong van AI-entiteiten en de diverse aspecten van intelligentie binnen dit domein, van basisvaardigheden tot geavanceerd redeneren. Fetzer benadrukt de noodzaak van grondig onderzoek om de essentie van intelligentie in AI te begrijpen.
 
-- Elderspeak: Definitie, voorbeelden, en het belang van aangepaste communicatie met ouderen. 
+Artificiële Intelligentie (AI) en Automatische Spraakherkenning (ASR) vormen twee essentiële componenten binnen de context van elderspraakmonitoring, een cruciale praktijk in de gezondheidszorg voor oudere patiënten. Door AI en ASR te integreren in monitoringsystemen kunnen zorgverleners effectiever communiceren met oudere patiënten, wat leidt tot verbeterde zorgkwaliteit en patiënttevredenheid.
 
+AI biedt geavanceerde technieken voor het analyseren en interpreteren van spraakgegevens, waardoor het mogelijk is om subtiele kenmerken en patronen in de spraak van oudere patiënten te identificeren. Dit omvat niet alleen het herkennen van woorden en zinnen, maar ook het begrijpen van de context, emoties en nuances in de spraak. Hierdoor kunnen zorgverleners beter inzicht krijgen in de behoeften en gezondheidsstatus van oudere patiënten, zelfs wanneer zij moeite hebben om zich verbaal uit te drukken \autocite{young2002,jabraf2019}.
+
+Automatische Spraakherkenning (ASR) speelt een cruciale rol bij het omzetten van spraak naar tekst, waardoor gesproken informatie snel en nauwkeurig kan worden vastgelegd en geanalyseerd \autocite{rabiner1993fundamentals,jabraf2017}.
+
+Dit stelt zorgverleners in staat om effectiever te communiceren met oudere patiënten, waarbij spraak wordt omgezet in geschreven tekst die kan worden opgeslagen, geanalyseerd en geïnterpreteerd voor verdere diagnostiek en behandeling.
 
 \section{Communicatie in de Zorg}
-   - Het belang van effectieve communicatie in de zorg, met een focus op ouderen. 
+Communicatie in de zorg, met name bij oudere patiënten, speelt een cruciale rol bij het leveren van effectieve en gepersonaliseerde zorg \autocite{smith2020}.
 
-- De rol van AI en ASR in het verbeteren van communicatieprocessen
+%TODO tekst van source word file (image toevoegen )
+Ouderen kunnen vaak te maken hebben met verschillende gezondheidsproblemen en kunnen moeite hebben om zich duidelijk uit te drukken, waardoor communicatie met zorgverleners uitdagend kan zijn. Het is essentieel om een ​​omgeving te creëren waarin zorgverleners in staat zijn om de behoeften en zorgen van oudere patiënten effectief te begrijpen en hierop te reageren. Effectieve communicatie draagt bij aan het vergroten van de tevredenheid van patiënten, het verbeteren van behandelingsresultaten en het verhogen van de kwaliteit van de zorg.
+
+Artificiële intelligentie (AI) en Automatische Spraakherkenning (ASR) spelen een steeds grotere rol in het verbeteren van communicatieprocessen in de zorg, inclusief die met oudere patiënten \autocite{patel2019}. 
+
+Door AI en ASR te integreren in zorgsystemen kunnen zorgverleners sneller en nauwkeuriger informatie vastleggen, interpreteren en communiceren. Dit stelt hen in staat om efficiënter te werken en beter in te spelen op de behoeften van patiënten. Bovendien kunnen AI-gebaseerde systemen zorgverleners ondersteunen bij het begrijpen van complexe spraakpatronen en het identificeren van belangrijke informatie, wat kan bijdragen aan het verbeteren van de kwaliteit en nauwkeurigheid van de communicatie \autocite{patel2019}. 
 \section{Analyse van ASR-technologieën}
-\subsection{Beschikbare Modellen en Selectiecriteria}
-  - Een overzicht van de huidige ASR-modellen. 
 
-- Criteria voor de selectie van bepaalde modellen voor gebruik in de zorgsector. 
-\subsection{Evaluatiemethoden en metrics}
-   - Inleiding tot Evaluatiemethoden: Het belang van evaluatie in ASR. 
+\subsection{Beschikbare Modellen}
 
-- Word Error Rate (WER): Basisconcept en beperkingen. 
+\subsubsection{AssemblyAI}
+AssemblyAI biedt een hoogwaardige ASR-service die specifiek is geoptimaliseerd voor ontwikkelaarsgemak en een breed scala aan talen en dialecten. Het is bekend om zijn robuustheid tegenover achtergrondgeluiden en biedt uitgebreide documentatie om integratie te vergemakkelijken \autocite{assemblyai2024}.
 
-- Beyond WER: Geavanceerdere evaluatiemethoden voor een completere beoordeling. 
+\subsubsection{Google Cloud Speech-to-Text }
+Google Cloud Speech-to-Tex maakt gebruik van geavanceerde deep learning technologieën en biedt brede taalondersteuning, inclusief voor de Nederlandse taal. De dienst kan echter relatief kostbaar zijn bij grote volumes en soms ontbreken er aanpassingsopties voor specifieke vereisten \autocite{googleasr2024}.
 
-- Evaluatie van Eigennamen en Specifieke Datasets: Het belang van nauwkeurigheid bij eigennamen en specifieke terminologie. 
+\subsubsection{Microsoft Azure Speech-to-Text}
+Microsoft Azure Speech-to-Text is een flexibel ASR-systeem dat goed geïntegreerd kan worden binnen het Microsoft-ecosysteem en een ruime ondersteuning biedt voor talen, maar kan duur zijn bij grootschalige toepassingen en vereist soms aanzienlijke technische kennis voor maatwerk \autocite{azurespeech2024}.
 
-- Bias en Diversiteit in Datasets: Uitdagingen en oplossingen voor bias en het waarborgen van diversiteit.  
-\subsection{Specifieke Uitdagingen in de Zorg}
-   - Communicatie met personen met accenten, verschillende spreeksnelheden, en het gebruik van Algemeen Nederlands (AN) versus dialect. 
+\subsubsection{Amazon Transcribe}
+Amazon Transcribe heeft uitgebreide functies voor verschillende zakelijke sectoren, met inbegrip van de gezondheidszorg en klantenservice. Echter, de kosten voor de service kunnen hoog oplopen bij veelvuldig gebruik \textcite{AmazonTranscribe2023}.
 
-- De impact van deze variabelen op de effectiviteit van ASR-systemen. 
+\subsubsection{Whisper}
+ Whisper is een model van OpenAI die geoptimaliseerd is voor uiteenlopende accenten en presteert goed in lawaaierige omgevingen. Het is geschikt voor lange audiofragmenten en blijkt een WER (woordfoutpercentage) van 14.8\% voor basisschoolkinderen en 30.7\% voor middelbare scholieren te hebben bij de verwerking van Vlaamse spraak \autocite{whisper2023}.
+
+\subsubsection{Wav2Vec 2.0}
+Wav2vec-U, ontwikkeld door Facebook AI, is een innovatieve benadering voor spraakherkenning die geen getranscribeerde gegevens vereist. Het model is vergelijkbaar met de prestaties van de best begeleide modellen van enkele jaren geleden, getraind met bijna 1000 uur aan getranscribeerde spraak. Deze methode, die spraakstructuren leert uit ongelabelde audio met behulp van een zelf-superviserend model en k-means clustering, is een belangrijke stap naar toegankelijkere spraaktechnologie voor een breed scala aan talen en dialecten \autocite{wav2vecu2021}.
+
+\subsubsection{Hugging Face}
+Hugging Face's ASR-technologie, onderdeel van de Transformers-bibliotheek, biedt uitgebreide ondersteuning voor het ontwikkelen van geavanceerde spraak-naar-teksttoepassingen. Deze technologie stelt ontwikkelaars en onderzoekers in staat om toegankelijke en efficiënte ASR-oplossingen te creëren, dankzij de mogelijkheid tot het 'fine-tuning' van modellen zoals Wav2Vec2 en de ondersteuning van een breed scala aan talen en dialecten \autocite{huggingface2023asr}.
+
+\subsubsection{Kaldi}
+
+Kaldi vertegenwoordigt een uitgebreid kader voor het uitvoeren van onderzoek naar spraakherkenning, waarbij een breed scala aan hulpmiddelen wordt geboden voor modellering en analyse. Ontwikkeld met als doel de ontwikkeling van robuuste en efficiënte ASR-systemen te vergemakkelijken. Kaldi onderscheidt zich door zijn ondersteuning voor lineaire algebra operaties, flexibiliteit in het modelleren van complexe spraakpatronen, en zijn open-source aard, wat samenwerking en innovaties binnen de gemeenschap van spraakherkenning aanmoedigt \autocite{Povey_ASRU2011}.
 
 
+\section{Evaluatiemethoden en metrics}
+\subsection{Belang van evaluatie binnen ASR}
+Evaluatie van automatische spraakherkenning (ASR) systemen is essentieel 
+om te begrijpen hoe goed ze presteren vanuit het perspectief van menselijke gebruikers, wat cruciaal is voor het meten van hun bruikbaarheid en het beoordelen van overgebleven uitdagingen, vooral bij het vergelijken van verschillende systemen. 
 
-\section{Implicaties en Toepassingen}
+Ondanks de vooruitgang van ASR tot commercieel bruikbare toepassingen, blijft een hoge foutenmarge in sommige spraakherkenningsdomeinen een belangrijke belemmering voor de bredere adoptie van spraaktechnologie, met name voor toepassingen die continue spraakherkenning met een grote woordenschat vereisen.
+
+De aanhoudende aanwezigheid van ASR-fouten heeft de noodzaak versterkt om alternatieve technieken te vinden voor het automatisch detecteren en corrigeren van dergelijke fouten. De correctie van transcriptiefouten is niet alleen cruciaal om de nauwkeurigheid van spraakherkenning te verbeteren, maar ook om te voorkomen dat fouten doorstromen naar volgende taalverwerkingsmodules, zoals machinevertaling \autocite{Errattahi_2018}.
+
+Het onderzoek van \textcite{Errattahi_2018} focust op opkomende technieken die de foutenratio meten en de staat van het onderzoek naar de detectie en correctie van ASR-fouten evalueren. Automatische detectie en correctie van ASR-fouten is een belangrijk onderzoeksgebied geworden, niet alleen om de nauwkeurigheid van spraakherkenning te verbeteren, evenals het verhinderen dat fouten worden doorgegeven aan processen na herkenning, zoals machinevertaling en mens-computer interactie. Het doel is om fouten automatisch te detecteren, te classificeren en vervolgens gedeeltelijk of volledig te corrigeren, ongeacht het gebruikte ASR-systeem. Dit kan bijzonder effectief zijn, vooral wanneer het ASR-systeem wordt gebruikt als een 'black-box' waarbij de gebruiker geen toegang heeft om de kenmerken en modellen van het ASR-systeem af te stellen.
+
+Het doel van ASR-evaluatie is om een vergelijkingscriterium te bieden tussen verschillende systemen of technieken en om de vooruitgang en prestaties op specifieke taken te meten op basis van foutenstatistieken. Er zijn twee essentiële aspecten gerelateerd aan ASR-fouten: de referentie-herkende afstemming, die het vinden van de beste woordafstemming tussen de referentie en de automatische transcriptie omvat, en de evaluatiemetrics die de prestaties van de ASR-systemen meten \autocite{McCowan2004}.
+
+
+Volgens \textcite{McCowan2004} moeten de eigenschappen van een ideale evaluatiemaatstaf voor ASR als volgt zijn:
+\begin{enumerate}[label=\arabic*.]
+ \item \textbf{Direct:} De maatstaf meet de ASR-component onafhankelijk van de ASR-toepassing.
  
-\subsection{Toepassingen van AI en ASR in de Zorg}
-- Praktische voorbeelden van hoe AI en ASR kunnen bijdragen aan betere zorg voor ouderen. 
+ \item \textbf{Objectief:} De maatstaf wordt op een geautomatiseerde manier berekend.
+ 
+ \item \textbf{Interpreteerbaar:} De absolute waarde van de maatstaf geeft inzicht in de prestatie.
+ 
+ \item \textbf{Modulair:} De evaluatiemaatstaf is algemeen genoeg om gedetailleerde toepassingsafhankelijke analyses mogelijk te maken.
+\end{enumerate} 
+
+\subsection{ASR Prestatie factoren}
+ASR-prestaties worden beïnvloed door verschillende factoren, waaronder:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Sprekervariabiliteit:}
+    De akoestische modellen zijn meestal gebaseerd op een beperkte hoeveelheid spraakgegevens die sprekers kenmerken op een bepaald moment en in een bepaalde situatie. Echter, de stem kan veranderen door factoren als veroudering, ziekte, emoties en vermoeidheid, waardoor het akoestische model mogelijk niet representatief is voor alle sprekers in al hun mogelijke staten.
+    
+    \item \textbf{Variabiliteit in gesproken taal:}
+    Spontane spraak, accenten en een hoge mate van uitspraakvariatie door dialecten en articulatie vormen bekende uitdagingen voor ASR. Met een grote woordenschat wordt het bovendien steeds moeilijker om voldoende gegevens te vinden om de taalmodellen te trainen, wat vaak resulteert in het gebruik van sub-woordenmodellen in plaats van woordenmodellen, wat de prestaties aanzienlijk kan verminderen.
+    
+    \item \textbf{Mismatchfactoren:}
+    Een van de grootste uitdagingen bij spraakherkenning komt door verschillen in opnamecondities tussen de trainings- en testfasen, vooral wanneer het spraaksignaal via telefoonlijnen wordt verkregen. 
+    
+    Verschillen in achtergrondgeluid, het transmissiekanaal en de opnameapparaten kunnen variabiliteit introduceren in de opnames, wat leidt tot een verminderde nauwkeurigheid van het systeem.
+\end{enumerate} 
+
+
+Deze factoren onderstrepen het belang van voortdurende verbetering en aanpassing van ASR-systemen om de uiteenlopende variabiliteiten en mismatchfactoren te kunnen accommoderen en daarmee de algehele systeemprestaties te verbeteren. Het onderzoek en de ontwikkeling van methoden voor het detecteren en corrigeren van ASR-fouten zijn daarom cruciaal voor het vergroten van de bruikbaarheid en acceptatie van ASR-technologieën in diverse toepassingen \autocite{Errattahi_2018}.
+
+\subsection{ASR Fouten detectie}
+In de context van automatische spraakherkenning (ASR) is de detectie van fouten een kritiek aspect dat de bruikbaarheid en intelligentie van ASR-systemen in praktische toepassingen aanzienlijk kan verbeteren \autocite{jiang2005confidence}.
+
+Het primaire doel van foutdetectie binnen ASR-systemen, zoals uiteengezet in het onderzoek van \textcite{jiang2005confidence}, is om de betrouwbaarheid van spraak-naar-tekst conversies te verhogen door effectief fouten in transcripties te identificeren. Dit doel is van cruciaal belang omdat zelfs geavanceerde ASR-technologieën te maken hebben met een significante foutmarge als gevolg van factoren zoals achtergrondgeluid, sprekersvariatie, en de complexiteit van taal zelf.
+
+Foutdetectiemechanismen zijn ontworpen om onnauwkeurigheden in transcripties te identificeren, waarbij onderscheid wordt gemaakt tussen verschillende soorten fouten zoals substitutie, deletie, of invoeging. Een nauwkeurige detectie van deze fouten is essentieel voor daaropvolgende correctiestrategieën, die tot doel hebben de ASR-output dichter bij de daadwerkelijk gesproken inhoud te brengen.
+
+Verder is in het onderzoek aangegeven dat ASR-foutdetectie de basis vormt voor het verbeteren van de gebruikerservaring in applicaties die afhankelijk zijn van spraakherkenning. Door de ontwikkeling van geavanceerde technieken voor foutdetectie en -correctie kunnen ASR-systemen niet alleen accurater worden, maar ook meer geïntegreerd in een breed scala aan toepassingen, variërend van spraakgestuurde assistenten tot automatische ondertiteling \autocite{jiang2005confidence}.
+
+\subsection{ASR Fouttypes}
+Automatische spraakherkenning (ASR) heeft aanzienlijke vooruitgang geboekt, maar blijft gevoelig voor fouten die de nauwkeurigheid en bruikbaarheid beïnvloeden. Er zijn meerdere typen fouten die in ASR-systemen kunnen voorkomen, elk met specifieke oorzaken en gevolgen \autocite{Errattahi_2018}: 
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Substitutiefouten:}
+    treden op wanneer het ASR-systeem een verkeerd woord herkent in plaats van het gesproken woord. Dit kan te wijten zijn aan de gelijkenis in klank tussen woorden of aan de beperkte precisie van het systeem bij het onderscheiden van spraakklanken.
+    
+    \item \textbf{Invoegfouten:}
+    worden gekenmerkt door het onjuist toevoegen van woorden die niet door de spreker zijn uitgesproken. Deze fouten kunnen ontstaan door achtergrondgeluiden of door het systeem dat ten onrechte pauzes of geluiden interpreteert als woorden.
+    
+    \item \textbf{Verwijderfouten:}
+    ontstaan wanneer het ASR-systeem een gesproken woord niet detecteert of herkent, waardoor dit woord afwezig is in de transcriptie. Dit kan het gevolg zijn van een lage spreeksnelheid, articulatieproblemen of wanneer het spraaksignaal wordt gemaskeerd door achtergrondlawaai.   
+\end{enumerate}
+
+Het verbeteren van de nauwkeurigheid van ASR en het verminderen van deze fouten vereist geavanceerde technieken, data-augmentatie en robuuste akoestische modellen die beter bestand zijn tegen variabiliteit in spraak en opnameomstandigheden \autocite{Errattahi_2018}.
+
+Ondanks deze uitdagingen biedt ASR enorme mogelijkheden voor toepassingen variërend van spraakgestuurd assistenten tot automatische ondertiteling, wat de motivatie vormt voor voortdurend onderzoek en ontwikkeling in dit veld \autocite{Errattahi_2018}.
+
+\subsection{Word Error Rate (WER)}
+Automatische spraakherkenningssystemen (ASR) hebben de afgelopen tien jaar aanzienlijke vooruitgang geboekt, waarbij de Word Error Rate (WER) naar voren is gekomen als de voornaamste maatstaf voor het evalueren van de prestaties van deze systemen \autocite{Raghavan2022}.
+
+WER is gebaseerd op het concept van de bewerkingsafstand en kwantificeert de nauwkeurigheid van ASR door de verhouding van invoegingen, verwijderingen en vervangingen ten opzichte van het totale aantal tokens in een zin te berekenen. Deze maatstaf is bijzonder effectief voor talen zoals het Engels, die doorgaans één spelling voor elk woord hebben, waardoor WER de algehele correctheid nauwkeurig kan weerspiegelen door de getranscribeerde tekst te vergelijken met de oorspronkelijke spraak \autocite{Raghavan2022}.
 
 
 
-\subsection{Persoonlijke Bijdrage en Toekomstvisie}
+\begin{equation}
+    WER(w) = \frac{i + d + s}{N_t}
+\end{equation}
+waarbij:
+\begin{itemize}
+    \item \(i\) Is het aantal invoegingen.
+    \item \(d\) Is het aantal verwijderingen.
+    \item \(s\) Is het aantal substituties.
+    \item \(N\) Is de totale aantal woorden.
+\end{itemize}
 
-- Reflectie op hoe jouw onderzoek en bevindingen kunnen bijdragen aan de verbetering van de zorgsector en communicatie met ouderen. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ryan_oconor.png}
+    \captionsetup{justification=centering}
+    \caption{Berekening van WER voor een voorbeeldmodeloutput gegeven de grondwaarheid transcriptie \autocite{OConnor2023}.}
+    \label{fig:voorbeeld}
+\end{figure}
 
-- Toekomstige ontwikkelingen en potentieel onderzoek. 
+\subsection{Beperkingen van WER}
+ Ondanks het wijdverbreide gebruik van WER als een standaardmaat voor de prestaties van ASR-systemen, identificeert het onderzoek enkele belangrijke beperkingen van deze maatstaf. De studie van \textcite{Kwint2023} benadrukt dat WER niet als een absoluut percentage kan worden beschouwd vanwege het ontbreken van een bovengrens. 
+ 
+ Dit impliceert dat WER alleen kan aangeven dat het ene systeem beter presteert dan het andere, maar niet noodzakelijkerwijs hoe goed een systeem absoluut is. Daarnaast is WER niet symmetrisch ten aanzien van deleties en invoegingen, waardoor het in lawaaierige omstandigheden meer dan 100\% kan overschrijden door een onevenredige nadruk op invoegingen vergeleken met verwijderingen. Het onderzoek toont aan dat, hoewel WER effectief blijft voor toepassingen zoals dicteren waar fouten handmatig gecorrigeerd kunnen worden, er voor de meeste andere soorten spraakherkenningssystemen, waarbij het doel verder gaat dan louter transcriptie, behoefte is aan alternatieve of aanvullende evaluatiekaders. Dit is vooral relevant in domeinen zoals geautomatiseerde medische rapportage, waar de nauwkeurigheid van de transcriptie directe gevolgen kan hebben voor de kwaliteit van de patiëntenzorg \autocite{Kwint2023}.
+
+Door het analyseren van bestaande medische audio-data en het uitvoeren van een pilot-experiment, onderzoekt deze studie de invloed van elementen zoals accent, stemfrequentie en omgevingslawaai op de kwaliteit van ASR-transcripties. De resultaten wijzen op de significante impact van lawaai op de WER, hoewel het experiment door een beperkt aantal deelnemers geen significante verschillen kon aantonen. Dit onderstreept het belang van verder onderzoek naar de effecten van lawaai, taal en verschillende ASR-technologieën op de nauwkeurigheid van spraakherkenning, vooral in kritieke toepassingen zoals medische rapportage.
+
+Het gebruik van de Woord Fout Ratio (WER) als enige maatstaf voor de evaluatie van spraakherkenningssystemen blijkt beperkt. Hoewel WFR een indicatie geeft van de algemene prestaties, mist het nuances, vooral met betrekking tot disfluenties zoals vulwoorden ("uh", "um"). Deze aspecten van spraak, die de denkprocessen van de spreker weerspiegelen, kunnen waardevol zijn voor de ene context maar overbodig voor de andere \textcite{Kwint2023}.
+\\
+\\
+Een discrepantie tussen de transcriptie van disfluenties door het model en de ‘grondwaarheid’ transcriptie kan leiden tot een onnauwkeurige WER. Daarom pleit deze analyse voor een evaluatiemethode die rekening houdt met de complexiteit en contextuele afhankelijkheid van spraak, wat zou resulteren in een accurater en relevanter beoordeling van spraakherkenningssystemen \autocite{OConnor2023}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ryan_oconor_meaning.png}
+    \captionsetup{justification=centering}
+    \caption{Voorbeeld van een onnauwkeurige WER resultaat \autocite{OConnor2023}.}
+    \label{fig:voorbeeld}
+\end{figure}
+
+\subsection{Jaro-Winkler Afstand (JW)}
+De Jaro-Winkler-afstand is een algoritme dat in twee delen is opgedeeld. Het eerste deel, de Jaro-implementatie, houdt rekening met de overeenkomende karakters tussen twee strings, ongeacht de volgorde. Als de overeenkomende karakters in een andere volgorde staan, wordt een tolerantievenster gebruikt voor het aantal transposities. De Jaro-Winkler afstand wordt berekend met een formule die de overeenkomsten en transposities tussen de strings in acht neemt, waarbij gewichten kunnen worden toegepast om de invloed van verschillende factoren te moduleren \autocite{Rdazzi2023comparison}.
+
+Het tweede deel, de Winkler-aanpassing, verbetert de Jaro-score door extra gewicht toe te kennen aan strings die in de begin karakters overeenkomen. Dit reflecteert het idee dat overeenkomsten aan het begin van de strings belangrijker zijn voor de totale perceptie van gelijkenis tussen strings. De Jaro-Winkler-afstand wordt dan berekend door aanpassingen aan de oorspronkelijke Jaro-score toe te voegen op basis van de overeenkomst aan het begin van de strings en de totale lengte van de strings \autocite{Rdazzi2023comparison}.
+
+De \(JW\) tussen twee woorden \(X\) en \(Y\) kan berekend worden als volgt:
+\begin{equation}
+    JW = \frac{1}{3} \left( \frac{m}{\text{lengte}(X)} + \frac{m}{\text{lengte}(Y)} + \frac{m - t}{m} \right)
+\end{equation}
+
+Waarbij:
+\begin{itemize}
+    \item \(m\) Is het aantal overeenkomsten.
+    \item \(t\) Is het aantal transposities.
+\end{itemize}
 
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+\subsection{Character Error Rate (CER)}
+Het karakterfoutpercentage (CER) biedt een gedetailleerde methode voor het evalueren van automatische spraakherkenningsystemen (ASR) door de prestaties op karakterniveau te beoordelen, in tegenstelling tot het woordfoutpercentage (WER), dat beoordelingen op woordniveau uitvoert. CER is vooral nuttig in talen zonder duidelijke woordgrenzen of in situaties waar nauwkeurigheid op karakterniveau cruciaal is. 
+Hoewel WER veel gebruikt wordt voor een alomvattende beoordeling in veel talen, maakt CER gerichte verbeteringen in ASR-systemen mogelijk, waardoor het een cruciale rol speelt in linguïstische en technische toepassingen die hoge nauwkeurigheid vereisen \autocite{huggingface2023asr}.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+\begin{equation}
+    CER = \frac{S + D + I}{N}
+\end{equation}
+Waarbij:
+\begin{itemize}
+    \item $S$ Het aantal substitutiefouten.
+    \item $D$ Het aantal verwijderingsfouten.
+    \item $I$ Het aantal invoegfouten.
+    \item $N$ Het totale aantal karakters in de referentie.
+\end{itemize}
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+\subsection{Het belang van sampeling en data verzameling}
+Bij het evalueren van Automatische Spraakherkenning (ASR) systemen is het kiezen van de juiste monsters essentieel voor een nauwkeurige beoordeling. Het proces omvat de volgende stappen \autocite{awsmlblog2023}:
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+\begin{enumerate}
+    \item Kies een kleine steekproef van opgenomen spraak, zorgend voor diversiteit en representativiteit.
+    \item Transcribeer de monsters handmatig om referentietranscripten te maken.
+    \item Verwerk deze monsters door de ASR-service.
+    \item Normaliseer de door ASR gegenereerde hypothese transcripten voor consistentie.
+    \item Bereken de Word Error Rate (WER) met een open-source tool.
+    \item Maak beoordelingen op basis van relevante metrieken.
+\end{enumerate}
 
-\lipsum[7-20]
+Het is belangrijk om uitspraken zorgvuldig te selecteren om vooringenomenheid te vermijden en een verscheidenheid aan spraakcontexten op te nemen, zoals verschillende geluidsniveaus, sprekers en accenten \autocite{awsmlblog2023}.
+
+
+Zowel wanneer het gaat om het evalueren van automatische spraakherkennings (ASR) systemen als in andere onderzoeksgebieden, spelen steekproeftechnieken een cruciale rol. Hierbij worden verschillende methoden toegepast om ervoor te zorgen dat de verzamelde gegevens een nauwkeurige representatie vormen van de diversiteit aan spraakpatronen en omgevingsomstandigheden die in de echte wereld worden aangetroffen \autocite{huggingface2023asr}:
+\begin{enumerate}[label=\arabic*.]
+ 
+    \item \textbf{Willekeurige Steekproef:}
+        Bij willekeurige steekproeven worden voorbeelden willekeurig geselecteerd uit de gehele populatie van belang.Dit zorgt ervoor dat alle spraakpatronen en omgevingsomstandigheden een gelijke kans krijgen om te worden opgenomen in het evaluatie dataset.
+        
+    \item \textbf{Gestratificeerde Steekproef:}
+        Gestratificeerde steekproeven verdelen de populatie in subgroepen op basis van criteria zoals sprekerskenmerken of omgevingsfactoren. Voorbeelden worden willekeurig geselecteerd uit elke subgroep, wat een evenredige vertegenwoordiging garandeert. Dit maakt gerichte evaluatie van ASR-prestaties mogelijk over verschillende demografische of omgevingsfactoren.
+        
+    \item \textbf{Clustersteekproef:}
+        Clustersteekproeven verdelen de populatie in clusters, zoals geografische regio's of organisatorische eenheden, waarbij willekeurig clusters worden gekozen voor evaluatie. Binnen elk cluster worden alle monsters of een willekeurige subset ervan opgenomen. Hoewel handig voor natuurlijk gegroepeerde populaties, kan dit leiden tot minder diversiteit als er grote variaties tussen clusters zijn.
+         
+\end{enumerate}
+
+
+%- Inleiding tot Evaluatiemethoden: Het belang van evaluatie in ASR. 
+%- Word Error Rate (WER): Basisconcept en beperkingen. 
+%- Beyond WER: Geavanceerdere evaluatiemethoden voor een completere beoordeling. 
+%- Evaluatie van Eigennamen en Specifieke Datasets: Het belang van nauwkeurigheid bij eigennamen en specifieke terminologie. 
+%- Bias en Diversiteit in Datasets: Uitdagingen en oplossingen voor bias en het waarborgen van diversiteit.  
+
+\section{Beschikbaar ASR evaluatie tools}
+\subsection{JIWER (Jitsi Word Error Rate):} JIWER vertegenwoordigt een efficiënte en gebruikersvriendelijke Python-bibliotheek, specifiek ontworpen voor het evalueren van prestaties van automatische spraakherkenningsystemen (ASR). Dit instrument faciliteert de kwantitatieve beoordeling van ASR-modellen door middel van diverse nauwkeurigheidsmetrieken, die cruciaal zijn voor het begrijpen en verbeteren van de betrouwbaarheid van spraak-naar-tekst conversies \autocite{jiwer2023}.
+
+\subsection{Speech Recognition Evaluation:} De "Speech Recognition Evaluation" tool van Symbl.AI is een geavanceerde en toegankelijke hulpmiddel voor iedereen die werkt met spraak-naar-tekst of spraakherkenningssystemen. Deze tool stelt gebruikers in staat om de nauwkeurigheid van automatische transcripties, gegenereerd door spraakherkenningssoftware, te vergelijken met transcripties gemaakt door mensen. Dit is cruciaal voor ontwikkelaars, onderzoekers, en gebruikers die de prestaties van hun spraak-naar-tekstsystemen willen evalueren en verbeteren \autocite{speechrecognitionevaluation2021}.
+
+\section{Persoonlijke Bijdrage en Toekomstvisie}
+
+In mijn onderzoek richt ik mij op het evalueren van spraak-naar-tekst modellen met als doel de transcriptie van 'Secondary Babytalk' te verbeteren voor nauwkeurigere communicatie binnen de zorgsector. Dit streven naar grotere accuratesse in transcripties is essentieel om misverstanden te voorkomen en de dialoog tussen zorgverleners en oudere patiënten te optimaliseren. Door de meest effectieve modellen te identificeren en toe te passen, beoog ik een significante verbetering in de kwaliteit van zorgcommunicatie te realiseren. Daarnaast zal er een Proof of Concept (POC) worden geïmplementeerd die het geselecteerde model zal adapteren en gebruiken voor transcriptie doeleinden.
+
+
+%Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+%Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+
+%\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+
+%Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+
