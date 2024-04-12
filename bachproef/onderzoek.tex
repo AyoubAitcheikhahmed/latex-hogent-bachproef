@@ -5,14 +5,381 @@
 \chapter{Het Onderzoek}%
 \label{ch:onderzoek}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
-% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
-% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
-% niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
 
-\lipsum[76-80]
+Het onderzoek begint met een overzicht van de samples die zorgvuldig zijn geselecteerd om een representatief beeld te geven van verschillende accenten en variaties in de Nederlandse taal. De samples omvatten een breed spectrum, waaronder een accent uit Antwerpen, Limburg, Brugge, Gent, en ook een sample van algemeen Nederlands.
+\subsection{Steekproefneming}
+De samples worden onderworpen aan zowel handmatige transcriptie (groundtruth) als transcribering door de gekozen AI-modellen. Deze stap zorgt ervoor dat we een vergelijking kunnen maken tussen de menselijke transcriptie en de prestaties van de AI-modellen.
 
+\begin{table}[htbp]
+    \centering
+    \caption{Overzicht van de samples}
+    \label{tab:samples}
+    \begin{tabular}{l||r}
+        \hline
+        \toprule
+        Sample & Accent \\ \midrule
+        Sample 1 & Antwerps \\
+        Sample 2 & Limburgs \\
+        Sample 3 & Brugs \\
+        Sample 4 & Gents \\
+        Sample 5 & Algemeen Nederlands \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+Na het verkrijgen van de transcripties worden ze geëvalueerd met behulp van de Jiwer-bibliotheek, waarbij verschillende metrics worden toegepast om de nauwkeurigheid en kwaliteit van de transcripties te meten. Deze evaluatie leidt tot een overzicht van de resultaten, waarbij de verschillende metrics in een tabel worden gepresenteerd voor een duidelijk inzicht in de prestaties van de AI-modellen.
+
+Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, patronen en eventuele discrepanties te identificeren. Op basis van deze analyse wordt een weloverwogen beslissing genomen. Deze beslissing kan variëren van het selecteren van het meest geschikte AI-model voor een bepaald accent tot het identificeren van gebieden waar verdere verbeteringen nodig zijn in de transcriberingstechnologie.
+
+\section{Groundtruth en Transcripties van modellen}
+
+\subsection{Sample 1}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample1}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+            \textbf{Ground truth} \\
+          
+        \hline
+            Dag Moniekske, het is tijd voor in ons trammeke te kruipen eh! allee eerst ons pyjamake aandoen en dan lekker in onze bedeke. zie wat ik hier heb, ons favorite boek. zal ik eens een stukske voorlezen zodat onze moniekske rustig. allez , nu ga ik de lampen uitdoen he suske. zeg maar slaapwel tegen jantje maan. Tot morgen ! \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample1}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\FloatBarrier
+\subsection{Sample 2}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample2}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \textbf{Ground truth} \\
+        
+        \hline
+        Goeiemorgen, hoe voel je je vandaag? Klaar voor een nieuwe dag met nieuwe kansen? \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample2}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+        
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\FloatBarrier
+\subsection{Sample 3}
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample3}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \textbf{Ground truth} \\
+        
+        \hline
+        Goeiemorgen, hoe voel je je vandaag? Klaar voor een nieuwe dag met nieuwe kansen? \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample3}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+        
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\FloatBarrier
+\subsection{Sample 4}
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample4}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \textbf{Ground truth} \\
+        
+        \hline
+        Goeiemorgen, hoe voel je je vandaag? Klaar voor een nieuwe dag met nieuwe kansen? \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample4}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+        
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\subsection{Sample 5}
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample5}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \textbf{Ground truth} \\
+        
+        \hline
+        Goeiemorgen, hoe voel je je vandaag? Klaar voor een nieuwe dag met nieuwe kansen? \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample5}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+        
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\FloatBarrier
+
+\subsection{Sample 6}
+\begin{table}[htbp]
+    \centering
+    \label{tab:groundtruth_sample6}
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \textbf{Ground truth} \\
+        
+        \hline
+        Goeiemorgen, hoe voel je je vandaag? Klaar voor een nieuwe dag met nieuwe kansen? \\
+        \hline
+    \end{tabularx}
+    \caption{Tabel met twee rijen}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \label{tab:results_sample6}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+        
+        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        
+        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+    \end{tabularx}
+    \caption{Resultaten van transcripties}
+\end{table}
+\FloatBarrier
+
+\pagebreak
+
+\subsection{Evaluatie Resultaten}
+\subsubsection{Sample 1}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 1}
+    \label{tab:results_sample1}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+
+\subsubsection{Sample 2}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 2}
+    \label{tab:results_sample2}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+
+\subsubsection{Sample 3}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 3}
+    \label{tab:results_sample3}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+\subsubsection{Sample 4}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 4}
+    \label{tab:results_sample4}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+
+\subsubsection{Sample 5}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 5}
+    \label{tab:results_sample5}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+
+\subsubsection{Sample 6}
+\begin{table}[htbp]
+    \centering
+    \caption{Resultaten van de evaluatie sample 6}
+    \label{tab:results_sample6}
+    \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+        \hline
+        & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+        AssemblyAI & 45 & 23 & 45 & 45 \\ \hline
+        Google & 45 & 23 & 45 & 45 \\ \hline
+        HuggingFace & 45 & 23 & 45 & 45 \\ \hline
+        Whisper & 45 & 23 & 45 & 45 \\ \hline
+        Wav2Vec 2.0 & 45 & 23 & 45 & 45 \\ \hline
+    \end{tabularx}
+\end{table}
+\FloatBarrier
+
+\subsubsection{average}
+\subsection{Analyse}
+%het onderzoek:
+%*overzicht van samples : 
+%sample 1 : accent uit antwerpen
+%sample 2: accent uit limburg
+%sample 3: accent uit brugge
+%sample 4: accent uit gent
+%sample 5: algemeen nederlands
+
+%* groundtruth en ai model transcriptie
+
+%* evaluatie adhv Jiwer (overzicht van resultaten van metrics in een tabel )
+
+%* analyse en beslissing ()
+%

@@ -22,6 +22,22 @@
 %% If you compile with the make_thesis.{bat,sh} script, use the following
 %% import instead:
 \usepackage[section,outputdir=../output]{minted}
+\usepackage{placeins}
+\usepackage{acronym}
+\usepackage[nonumberlist,acronym,toc]{glossaries} % Include the glossaries package
+\makeglossaries
+
+% Define your acronyms
+\newacronym{asr}{ASR}{Automated Speech Recognition}
+\newacronym{ai}{AI}{Artificiële Intelligentie}
+\newacronym{wer}{WER}{Word Error Rate}
+\newacronym{cer}{CER}{Character Error Rate}
+\newacronym{stt}{STT}{Speech To Text} %page 15
+\newacronym{jwd}{JWD}{Jaro Winkler Dinstance}
+\newacronym{ui}{UI}{User Interface}
+\newacronym{aws}{AWS}{Amazon Web Services}
+
+
 \usemintedstyle{solarized-light}
 \definecolor{bg}{RGB}{253,246,227} %% Set the background color of the codeframe
 
@@ -98,12 +114,15 @@
 \maketitle
 \hypersetup{pageanchor=true}
 
+\glsaddall
+\printglossary[type=\acronymtype,title=Afkortingenlijst]
 \input{voorwoord}
 \input{samenvatting}
 
 %---------- Inhoud, lijst figuren, ... -----------------------------------------
 
 \tableofcontents
+
 
 % In a list of figures, the complete caption will be included. To prevent this,
 % ALWAYS add a short description in the caption!
@@ -116,8 +135,8 @@
 
 % If you included tables and/or source code listings, uncomment the appropriate
 % lines.
-%\listoftables
-%\listoflistings
+\listoftables
+\listoflistings
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
@@ -137,6 +156,7 @@
 \input{standvanzaken}
 \input{methodologie}
 \input{onderzoek}
+\input{poc}
 
 % Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
 % vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
@@ -170,10 +190,13 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 %\input{...}
 
 %%---------- Backmatter, referentielijst ---------------------------------------
+\printglossary[type=\acronymtype,title=List of Abbreviations]
+
 
 \backmatter{}
 
-\setlength\bibitemsep{2pt} %% Add Some space between the bibliograpy entries
+\setlength\bibitemsep{3pt} %% Add Some space between the bibliograpy entries
 \printbibliography[heading=bibintoc]
+
 
 \end{document}
