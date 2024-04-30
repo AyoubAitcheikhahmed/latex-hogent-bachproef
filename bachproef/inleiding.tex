@@ -5,39 +5,63 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+De artikel van \textcite{StatistiekVlaanderen2023} biedt een gedetailleerde analyse van de Vlaamse leeftijdspiramide, die een vergrijzende bevolking toont met een brede bovenkant en een smalle basis. Deze bron bespreekt de significante aanwezigheid van de babyboomgeneratie binnen de huidige demografie en de stijgende proportie oudere volwassenen in de bevolking, in het bijzonder in kustgemeenten waar meer dan een derde van de bevolking ouder is dan 65 jaar. Daarnaast benadrukt het de krimpende jongere demografie, wat wijst op een dalend geboortecijfer. 
+\\
+Deze demografische schuiving brengt aanzienlijke uitdagingen met zich mee. Het vereist een herbeoordeling van de beschikbare middelen en een strategische benadering om de levenskwaliteit en zorg van de senioren te waarborgen. Dit onderstreept het fundamentele belang van onderzoek dat zich focust op het optimaliseren van de levenskwaliteit en de ondersteunende diensten voor onze senioren.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{graph_statistiekVlaanderen.png}
+    \captionsetup{justification=centering}
+    \caption{Het uitvoeringsplan voor de evaluatieprocedure.}
+    \label{fig:plan_methodologie}
+\end{figure}
+\FloatBarrier
 
+Deze doelstelling zal worden bereikt door een grondige evaluatie van diverse transcripties dit door ASR models gegenereerd worden, met als doel het selecteren van de meest accurate transcriptie.
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
+Deze bachelorproef confronteert de uitdaging van misverstanden en miscommunicatie die voortvloeien uit het gebruik van 'Secondary Babytalk' in de interacties tussen zorgverleners en oudere patiënten. Het onderzoeksprobleem richt zich op het identificeren van het meest effectieve speech-to-text model dat deze unieke vorm van communicatie kan decoderen. De noodzaak om een duidelijk, respectvol en verstaanbaar communicatiekader te waarborgen binnen de zorgsector, vormt de kern van deze probleemstelling. Daarbij is het essentieel dat het geselecteerde model accuraatheid combineert met sensitiviteit voor de nuances in taalgebruik bij oudere patiënten.
+Het belang van dit onderzoek komt tot uiting in de meerwaarde die het zal bieden voor oudere patiënten en studenten verpleegkunde. Door een verfijnde speech-to-text technologie te identificeren die 'Secondary Babytalk' nauwkeurig kan transcriberen, streven we naar het verbeteren van de communicatie in de zorgsector. Dit is niet alleen van cruciaal belang voor de waardigheid en het welzijn van ouderen, maar ook voor het onderwijs en de professionele ontwikkeling van toekomstige verpleegkundigen.
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+De centrale onderzoeksvraag van deze bachelorproef zal als volgt zijn:\\
 
+
+\say{Hoe kunnen we spraak-naar-tekstmodellen evalueren om te bepalen welk model optimaal presteert voor de specifieke usecase van spraaktranscriptie?}\\
+\break
+Het beantwoorden van deze vraag is fundamenteel voor het verbeteren van de communicatie tussen zorgverleners en oudere patiënten. Om een grondiger en omvattend antwoord op deze vraag te formuleren, worden de volgende deelvragen onderzocht:
+
+\begin{itemize}
+    \item Wat houd een speech-to-text model in precies en waar bevindt het zich in de wereld van kunstmatige intelligentie?
+    \item Welke modellen zijn beschikbaar op de markt om te testen?
+    \item Wat zijn relevante criteria om dergelijke modellen te evalueren?
+\end{itemize}
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+De hoofddoelstelling van deze bachelorproef is het selecteren van het meest accurate spraak-naar-tekstmodel dat beschikbaar is op de markt, om vervolgens gebruikt te worden in verdere studies gericht op de communicatie tussen zorgverleners en oudere patiënten. 
+
+
+
+Het succes van dit onderzoek zal concreet gemeten worden door de volgende: 
+
+\begin{itemize}
+    \item Een verzameling van divers opnames van accenten in België vrij van bias. daarna het inzetten van een open-source evaluatiebibliotheek om de prestaties van diverse modellen objectief te kunnen vergelijken. 
+    \item Een duidelijk en concreet evaluatieresultaat verkrijgen, dat als solide basis dient voor de selectie van het meest nauwkeurige model:you
+    
+
+\end{itemize}
+
+Verder streven we naar het ontwikkelen van een proof-of-concept applicatie die de functionaliteiten van een 'Elderspeak' monitoringapplicatie voor studenten verpleegkunde vergemakelijkt.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
 
-% Het is gebruikelijk aan het einde van de inleiding een overzicht te
-% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
-% die je kan aanvullen/aanpassen in functie van je eigen tekst.
 
 De rest van deze bachelorproef is als volgt opgebouwd:
 
@@ -45,6 +69,8 @@ In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand v
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In Hoofdstuk~\ref{ch:onderzoek} wordt het onderzoek uitgevoerd, waarbij alle resultaten van de transcripties en evaluaties worden gepresenteerd. Op basis van deze gegevens wordt vervolgens een onderbouwde conclusie getrokken.
+
+In Hoofdstuk~\ref{ch:poc} De focus zal liggen op het demonstreren van de ontwikkelde mobiele applicatie.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.

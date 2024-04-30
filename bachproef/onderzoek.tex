@@ -7,7 +7,7 @@
 
 
 Het onderzoek begint met een overzicht van de samples die zorgvuldig zijn geselecteerd om een representatief beeld te geven van verschillende accenten en variaties in de Nederlandse taal. De samples omvatten een breed spectrum, waaronder een accent uit Antwerpen, Limburg, Brugge, Gent, en ook een sample van algemeen Nederlands.
-\subsection{Steekproefneming}
+\section{Steekproefneming}
 De samples worden onderworpen aan zowel handmatige transcriptie (groundtruth) als transcribering door de gekozen AI-modellen. Deze stap zorgt ervoor dat we een vergelijking kunnen maken tussen de menselijke transcriptie en de prestaties van de AI-modellen.
 
 \begin{table}[htbp]
@@ -33,6 +33,7 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
 
 \section{Groundtruth en Transcripties van modellen}
 
+
 \subsection{Sample 1}
 
 \begin{table}[htbp]
@@ -56,17 +57,23 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
         \hline
         \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
 
-        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        AssemblyAI &    Dag Monixke, het is tijd om in ons trammetje te kruipen. Allee, eerst ons pyjama aandoen en dan lekker in ons bedje. Zie eens wat ik hier heb. Oude favorietenboek. Zal ik een stukje voorlezen zodat ons Monixke wat rustig kan worden? Allee, nu ga ik de lampjes uitdoen, hè zusje. Zeg maar sloppel tegen Janneke man.Tot morgen
+         \\ \hline
         
-        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        WhisperAI & Dag Monique. Het is tijd voor in ons tremmen ik het te kroppen. Eerst ons pizza met je hand doen en dan lek je in ons burkje. Ziet iets wat ik hier heb. Awe favorieten boek. Zal ik een stukje voorlezen zodat ons Monique bij rustig kan worden? Allee. Nee, ik ga de lampenke zut toe in de suetje. Zicht maar een sloppel tegen je jannige man. Tot meer je...
+         \\ \hline
         
-        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        Google Cloud TTS &         cosmonique je destijds vlinderstruiken te kruipen hè als eerst wel speciaal met je hand doen en dan lekker in ons werk en series wat dat ik hierin hou je favoriete stukje voorlezen dan moet ik even rustig kan worden nee zeg Slaapwel tegen je man tot morgen
+         \\ \hline
         
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        AWS &    dag Miek. Het is tijd voor in ons trammetje te kruipen, hè Allez. Eerst ons pyjama aandoen en dan lekker in ons beetje. Zie eens wat dat ik hier heb. O favoriete boek zal ik een stukje voorlezen, zodat ons moniek wat rustig kan worden. Allez, ik de lampes. Suske zegt maar sloppel tegen Janneke man tot morgen
+         \\ \hline
         
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        Wav2Vec Large CLSR 53 Dutch &     degmoniekske dies tijd voor in ons trampiken te krampenen al je eerste o'ns pigamakjen honden in da lekirino's binnetje zie iets wat tek ik jierin ouwe favorieten boek zal je stuxke voorlezen toen zij ons monijkske wa rustiekemweren alle neig ong de lampejes ten toenissus je zicht maar sloppel teja je man tot merg je
+         \\ \hline
         
-        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
+        Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
+         \\ \hline
     \end{tabularx}
     \caption{Resultaten van transcripties}
 \end{table}
@@ -91,21 +98,27 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
     \centering
     \label{tab:results_sample2}
     \begin{tabularx}{\textwidth}{|l|X|}
-        \hline
-        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
-        
-        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-    \end{tabularx}
+    \hline
+    \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+    
+    AssemblyAI &    Dag Monixke, het is tijd om in ons trammetje te kruipen. Allee, eerst ons pyjama aandoen en dan lekker in ons bedje. Zie eens wat ik hier heb. Oude favorietenboek. Zal ik een stukje voorlezen zodat ons Monixke wat rustig kan worden? Allee, nu ga ik de lampjes uitdoen, hè zusje. Zeg maar sloppel tegen Janneke man.Tot morgen
+    \\ \hline
+    
+    WhisperAI & Dag Monique. Het is tijd voor in ons tremmen ik het te kroppen. Eerst ons pizza met je hand doen en dan lek je in ons burkje. Ziet iets wat ik hier heb. Awe favorieten boek. Zal ik een stukje voorlezen zodat ons Monique bij rustig kan worden? Allee. Nee, ik ga de lampenke zut toe in de suetje. Zicht maar een sloppel tegen je jannige man. Tot meer je...
+    \\ \hline
+    
+    Google Cloud TTS &         cosmonique je destijds vlinderstruiken te kruipen hè als eerst wel speciaal met je hand doen en dan lekker in ons werk en series wat dat ik hierin hou je favoriete stukje voorlezen dan moet ik even rustig kan worden nee zeg Slaapwel tegen je man tot morgen
+    \\ \hline
+    
+    AWS &    dag Miek. Het is tijd voor in ons trammetje te kruipen, hè Allez. Eerst ons pyjama aandoen en dan lekker in ons beetje. Zie eens wat dat ik hier heb. O favoriete boek zal ik een stukje voorlezen, zodat ons moniek wat rustig kan worden. Allez, ik de lampes. Suske zegt maar sloppel tegen Janneke man tot morgen
+    \\ \hline
+    
+    Wav2Vec Large CLSR 53 Dutch &     degmoniekske dies tijd voor in ons trampiken te krampenen al je eerste o'ns pigamakjen honden in da lekirino's binnetje zie iets wat tek ik jierin ouwe favorieten boek zal je stuxke voorlezen toen zij ons monijkske wa rustiekemweren alle neig ong de lampejes ten toenissus je zicht maar sloppel teja je man tot merg je
+    \\ \hline
+    
+    Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
+    \\ \hline
+\end{tabularx}
     \caption{Resultaten van transcripties}
 \end{table}
 \FloatBarrier
@@ -128,21 +141,27 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
     \centering
     \label{tab:results_sample3}
     \begin{tabularx}{\textwidth}{|l|X|}
-        \hline
-        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
-        
-        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-    \end{tabularx}
+    \hline
+    \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+    
+    AssemblyAI &    Dag Monixke, het is tijd om in ons trammetje te kruipen. Allee, eerst ons pyjama aandoen en dan lekker in ons bedje. Zie eens wat ik hier heb. Oude favorietenboek. Zal ik een stukje voorlezen zodat ons Monixke wat rustig kan worden? Allee, nu ga ik de lampjes uitdoen, hè zusje. Zeg maar sloppel tegen Janneke man.Tot morgen
+    \\ \hline
+    
+    WhisperAI & Dag Monique. Het is tijd voor in ons tremmen ik het te kroppen. Eerst ons pizza met je hand doen en dan lek je in ons burkje. Ziet iets wat ik hier heb. Awe favorieten boek. Zal ik een stukje voorlezen zodat ons Monique bij rustig kan worden? Allee. Nee, ik ga de lampenke zut toe in de suetje. Zicht maar een sloppel tegen je jannige man. Tot meer je...
+    \\ \hline
+    
+    Google Cloud TTS &         cosmonique je destijds vlinderstruiken te kruipen hè als eerst wel speciaal met je hand doen en dan lekker in ons werk en series wat dat ik hierin hou je favoriete stukje voorlezen dan moet ik even rustig kan worden nee zeg Slaapwel tegen je man tot morgen
+    \\ \hline
+    
+    AWS &    dag Miek. Het is tijd voor in ons trammetje te kruipen, hè Allez. Eerst ons pyjama aandoen en dan lekker in ons beetje. Zie eens wat dat ik hier heb. O favoriete boek zal ik een stukje voorlezen, zodat ons moniek wat rustig kan worden. Allez, ik de lampes. Suske zegt maar sloppel tegen Janneke man tot morgen
+    \\ \hline
+    
+    Wav2Vec Large CLSR 53 Dutch &     degmoniekske dies tijd voor in ons trampiken te krampenen al je eerste o'ns pigamakjen honden in da lekirino's binnetje zie iets wat tek ik jierin ouwe favorieten boek zal je stuxke voorlezen toen zij ons monijkske wa rustiekemweren alle neig ong de lampejes ten toenissus je zicht maar sloppel teja je man tot merg je
+    \\ \hline
+    
+    Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
+    \\ \hline
+\end{tabularx}
     \caption{Resultaten van transcripties}
 \end{table}
 \FloatBarrier
@@ -165,21 +184,27 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
     \centering
     \label{tab:results_sample4}
     \begin{tabularx}{\textwidth}{|l|X|}
-        \hline
-        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
-        
-        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-    \end{tabularx}
+    \hline
+    \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+    
+    AssemblyAI &    Dag Monixke, het is tijd om in ons trammetje te kruipen. Allee, eerst ons pyjama aandoen en dan lekker in ons bedje. Zie eens wat ik hier heb. Oude favorietenboek. Zal ik een stukje voorlezen zodat ons Monixke wat rustig kan worden? Allee, nu ga ik de lampjes uitdoen, hè zusje. Zeg maar sloppel tegen Janneke man.Tot morgen
+    \\ \hline
+    
+    WhisperAI & Dag Monique. Het is tijd voor in ons tremmen ik het te kroppen. Eerst ons pizza met je hand doen en dan lek je in ons burkje. Ziet iets wat ik hier heb. Awe favorieten boek. Zal ik een stukje voorlezen zodat ons Monique bij rustig kan worden? Allee. Nee, ik ga de lampenke zut toe in de suetje. Zicht maar een sloppel tegen je jannige man. Tot meer je...
+    \\ \hline
+    
+    Google Cloud TTS &         cosmonique je destijds vlinderstruiken te kruipen hè als eerst wel speciaal met je hand doen en dan lekker in ons werk en series wat dat ik hierin hou je favoriete stukje voorlezen dan moet ik even rustig kan worden nee zeg Slaapwel tegen je man tot morgen
+    \\ \hline
+    
+    AWS &    dag Miek. Het is tijd voor in ons trammetje te kruipen, hè Allez. Eerst ons pyjama aandoen en dan lekker in ons beetje. Zie eens wat dat ik hier heb. O favoriete boek zal ik een stukje voorlezen, zodat ons moniek wat rustig kan worden. Allez, ik de lampes. Suske zegt maar sloppel tegen Janneke man tot morgen
+    \\ \hline
+    
+    Wav2Vec Large CLSR 53 Dutch &     degmoniekske dies tijd voor in ons trampiken te krampenen al je eerste o'ns pigamakjen honden in da lekirino's binnetje zie iets wat tek ik jierin ouwe favorieten boek zal je stuxke voorlezen toen zij ons monijkske wa rustiekemweren alle neig ong de lampejes ten toenissus je zicht maar sloppel teja je man tot merg je
+    \\ \hline
+    
+    Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
+    \\ \hline
+\end{tabularx}
     \caption{Resultaten van transcripties}
 \end{table}
 \subsection{Sample 5}
@@ -201,21 +226,27 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
     \centering
     \label{tab:results_sample5}
     \begin{tabularx}{\textwidth}{|l|X|}
-        \hline
-        \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
-        
-        AssemblyAI & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Google & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        HuggingFace & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Whisper & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-        
-        Wav2Vec 2.0 & dag Joleineke, hebben we goed geslapen? amai je ziet er goed uit. gaan we braaf ons pillekes innemen ? \\ \hline
-    \end{tabularx}
+    \hline
+    \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
+    
+    AssemblyAI &    Dag Monixke, het is tijd om in ons trammetje te kruipen. Allee, eerst ons pyjama aandoen en dan lekker in ons bedje. Zie eens wat ik hier heb. Oude favorietenboek. Zal ik een stukje voorlezen zodat ons Monixke wat rustig kan worden? Allee, nu ga ik de lampjes uitdoen, hè zusje. Zeg maar sloppel tegen Janneke man.Tot morgen
+    \\ \hline
+    
+    WhisperAI & Dag Monique. Het is tijd voor in ons tremmen ik het te kroppen. Eerst ons pizza met je hand doen en dan lek je in ons burkje. Ziet iets wat ik hier heb. Awe favorieten boek. Zal ik een stukje voorlezen zodat ons Monique bij rustig kan worden? Allee. Nee, ik ga de lampenke zut toe in de suetje. Zicht maar een sloppel tegen je jannige man. Tot meer je...
+    \\ \hline
+    
+    Google Cloud TTS &         cosmonique je destijds vlinderstruiken te kruipen hè als eerst wel speciaal met je hand doen en dan lekker in ons werk en series wat dat ik hierin hou je favoriete stukje voorlezen dan moet ik even rustig kan worden nee zeg Slaapwel tegen je man tot morgen
+    \\ \hline
+    
+    AWS &    dag Miek. Het is tijd voor in ons trammetje te kruipen, hè Allez. Eerst ons pyjama aandoen en dan lekker in ons beetje. Zie eens wat dat ik hier heb. O favoriete boek zal ik een stukje voorlezen, zodat ons moniek wat rustig kan worden. Allez, ik de lampes. Suske zegt maar sloppel tegen Janneke man tot morgen
+    \\ \hline
+    
+    Wav2Vec Large CLSR 53 Dutch &     degmoniekske dies tijd voor in ons trampiken te krampenen al je eerste o'ns pigamakjen honden in da lekirino's binnetje zie iets wat tek ik jierin ouwe favorieten boek zal je stuxke voorlezen toen zij ons monijkske wa rustiekemweren alle neig ong de lampejes ten toenissus je zicht maar sloppel teja je man tot merg je
+    \\ \hline
+    
+    Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
+    \\ \hline
+\end{tabularx}
     \caption{Resultaten van transcripties}
 \end{table}
 \FloatBarrier
@@ -368,18 +399,22 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
 \FloatBarrier
 
 \subsubsection{average}
+ wat komt hier ?
+ voor alle samples een average van alle metrics
+ \begin{table}[htbp]
+     \centering
+     \caption{Resultaten van de evaluatie sample 6}
+     \label{tab:results_sample6}
+     \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+         \hline
+         & \textbf{WER} & \textbf{CER} & \textbf{WIL} & \textbf{MER} \\ \hline
+         average & 45 & 23 & 45 & 45 \\ \hline
+
+     \end{tabularx}
+ \end{table}
+ \FloatBarrier 
+ 
 \subsection{Analyse}
-%het onderzoek:
-%*overzicht van samples : 
-%sample 1 : accent uit antwerpen
-%sample 2: accent uit limburg
-%sample 3: accent uit brugge
-%sample 4: accent uit gent
-%sample 5: algemeen nederlands
 
-%* groundtruth en ai model transcriptie
+\section{Evaluatie Code}
 
-%* evaluatie adhv Jiwer (overzicht van resultaten van metrics in een tabel )
-
-%* analyse en beslissing ()
-%
