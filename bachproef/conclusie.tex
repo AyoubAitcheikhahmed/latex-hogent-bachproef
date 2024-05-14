@@ -14,5 +14,49 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
-\lipsum[76-80]
+
+Op basis van de gedetailleerde evaluatie en vergelijking van verschillende spraak-naar-tekstmodellen (ASR) binnen dit onderzoek, gericht op hun vermogen om diverse Belgische accenten te transcriberen, heeft men in dit onderzoek kunnen constateren dat het AssemblyAI-model uitblinkt in zowel nauwkeurigheid als consistentie. Deze conclusie steunt op gevestigde metrieken zoals de Word Error Rate (WER), Match Error Rate (MER), en Character Error Rate (CER), die allemaal zijn geïntegreerd in de JIWER-bibliotheek.
+
+De analyse van de dataset toont aan dat AssemblyAI consistent lagere WER-scores behaalt over verschillende steekproeven heen. Bijzonder in steekproef 5, scoort AssemblyAI aanzienlijk lager dan andere modellen met een WER van slechts 0.20, wat wijst op een superieure prestatie in het correct decoderen en transcriberen van spraak. De uitmuntendheid van AssemblyAI wordt verder onderstreept door zijn prestaties op andere belangrijke metrieken zoals WIL (Word Information Lost) en WIP (Word Information Preserved), waar het consequent beter scoort dan de concurrentie, wat bijdraagt aan zijn aanbeveling voor praktische implementatie.
+
+De consistentie van het model, zelfs in de aanwezigheid van diverse accentvariaties, illustreert de robuustheid ervan voor gebruik in kritische toepassingen, zoals de monitoring van 'Secondary Babytalk' in zorginstellingen. Dit is van cruciaal belang, omdat een accurate en betrouwbare transcriptie direct de kwaliteit van communicatie en daarmee de zorg verbetert.
+
+Deze bevindingen benadrukken het belang van een gedegen selectieproces van spraak-naar-tekstmodellen, vooral als deze ingezet worden in kritische zorgtoepassingen waarbij elke verbetering in communicatie direct bijdraagt aan de kwaliteit van leven van de patiënten. Het vermogen van AssemblyAI om consequent hoog te scoren op verschillende metrieken ondersteunt de keuze voor dit model als de beste optie voor het ondersteunen van communicatie met oudere patiënten binnen het Belgische dialectlandschap. 
+\section{Discussie}
+
+\subsection{Beperkingen van het Onderzoek}
+
+Ondanks dat de uitkomsten van dit onderzoek positief zij, zijn er enkele beperkingen die de algemene conclusies kunnen beïnvloeden. Ten eerste is de steekproefomvang relatief beperkt, wat de algemene toepasbaarheid van de bevindingen kan inperken. De focus was voornamelijk gericht op vier specifieke Belgische accenten en één algemene Nederlandse steekproef; de prestaties van de geteste modellen in andere dialectische en linguïstische contexten zijn daarom niet onderzocht. Dit beperkt de mogelijkheid om de resultaten te generaliseren naar andere taalvariaties.
+
+Ten tweede was de variabiliteit in spraakcomplexiteit tussen de verschillende samples niet volledig gecontroleerd, wat suggereert dat sommige resultaten mogelijk beïnvloed zijn door verschillen in eenvoud of complexiteit van het taalgebruik. Daarnaast, hoewel AssemblyAI uitstekende resultaten liet zien, is de transparantie omtrent de parameters en training van het model niet volledig, wat vragen oproept over de reproduceerbaarheid van de studie.
+
+Ten derde zijn de gebruikte opnames uitsluitend gemaakt in een stille omgeving. Dit aspect kan de uiteindelijke resultaten beïnvloeden wanneer er achtergrondgeluid aanwezig is tijdens de opnames. Het is daarom raadzaam om in toekomstig onderzoek ook de invloed van achtergrondgeluid op de prestaties van spraak-naar-tekstmodellen te onderzoeken.
+
+Deze beperkingen suggereren dat verdere studies noodzakelijk zijn om de robuustheid en toepasbaarheid van de bevindingen te verifiëren, vooral in gevarieerde en realistische luisteromgevingen.
+ 
+\subsection{Aanbevelingen voor Toekomstig Onderzoek}
+
+Voor toekomstig onderzoek zou het waardevol zijn om de steekproefomvang te vergroten en meer diverse accentpatronen op te nemen om de robuustheid van de spraak-naar-tekstmodellen verder te testen.
+
+ Het zou ook nuttig zijn om een diepgaandere analyse uit te voeren van de soorten fouten die door de modellen worden gemaakt, om waardevolle feedback te verkrijgen. 
+ 
+ Deze feedback zou onderzoek kunnen ondersteunen dat gericht is op het verfijnen van algoritmen met geavanceerdere machineleertechnieken, zoals deep learning, om de nauwkeurigheid te verbeteren en een betere generalisatie over verschillende soorten spraakgegevens te waarborgen. 
+ 
+ Deze vooruitgang zou de inzetbaarheid van deze technologieën aanzienlijk verbeteren in een breder scala van zorginstellingen.
+\\
+Verder heeft het onderzoek geleid tot nieuwe onderzoeksvragen die aanzetten tot verdere studies:
+
+
+
+
+
+\begin{enumerate}[label=\arabic*.]
+    
+    \item Hoe zouden de modellen presteren als de opnamen willekeurig in een lawaaierige omgeving worden gemaakt ?
+    \item Hoe zouden de modellen presteren als de opnames langer duren en complexere accenten bevatten?
+    \item Kan het gekozen model verfijnd worden om een perfecte transcriptie te leveren?
+    
+\end{enumerate}
+
+
 

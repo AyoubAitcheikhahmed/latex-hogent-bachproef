@@ -43,7 +43,9 @@ Alvorens hierop een antwoord te kunnen bieden, is het van belang inzicht te verw
 \subsection{Definitie}
 
 Secondary Baby Talk, ook bekend als 'Elderspeak' is een vorm van spraak gericht aan oudere volwassenen. Het kenmerkt zich door objectieve aspecten zoals verhoogd volume en hoge toon en subjectieve aspecten zoals een neerbuigende toon. Het onderzoek van \textcite{balsis2006evaluations} onderzoekt hoe mensen die niet direct betrokken zijn bij een gesprek "Elderspeak" beoordelen. een spreekstijl die vaak wordt gebruikt in communicatie met ouderen, en hoe deze beoordeling beïnvloed wordt door de leeftijd van de persoon die spreekt en hun relatie tot de oudere luisteraar. 
-Ondanks de intentie om ouderen te helpen, wordt zowel het gebruik als het ontvangen van 'Elderspeak' negatief beoordeeld. Oudere patiënten worden gezien als minder welwillend, terwijl ontvangers als minder capabel en in een slechtere stemming worden beschouwd. Deze bevindingen benadrukken de negatieve implicaties van 'Elderspeak', ongeacht de leeftijd van de spreker of hun relatie tot de ontvanger. Dit suggereert dat 'Elderspeak' bijdraagt aan negatieve stereotypen en afhankelijkheid bij ouderen.Dit communicatiegedrag, ondanks goede intenties, kan als neerbuigend worden ervaren door ouderen en kan hun zelfrespect, stemming en sociale betrokkenheid negatief beïnvloeden. Onderzoek suggereert dat dit soort spraak ouderen kan doen overkomen als minder competent, wat hun afhankelijkheid kan versterken en bijdraagt aan een negatieve cyclus van afnemende fysieke, cognitieve en functionele status \autocite{balsis2006evaluations}.
+Ondanks de intentie om ouderen te helpen, wordt zowel het gebruik als het ontvangen van 'Elderspeak' negatief beoordeeld. Oudere patiënten worden gezien als minder welwillend, terwijl ontvangers als minder capabel en in een slechtere stemming worden beschouwd. Deze bevindingen benadrukken de negatieve implicaties van 'Elderspeak', ongeacht de leeftijd van de spreker of hun relatie tot de ontvanger. Dit suggereert dat 'Elderspeak' bijdraagt aan negatieve stereotypen en afhankelijkheid bij ouderen.
+
+Dit communicatiegedrag, ondanks goede intenties, kan als neerbuigend worden ervaren door ouderen en kan hun zelfrespect, stemming en sociale betrokkenheid negatief beïnvloeden. Onderzoek suggereert dat dit soort spraak ouderen kan doen overkomen als minder competent, wat hun afhankelijkheid kan versterken en bijdraagt aan een negatieve cyclus van afnemende fysieke, cognitieve en functionele status \autocite{balsis2006evaluations}.
 
 
 Een belangrijke bevinding van \textcite{williams2005enhancing} is dat communicatie tussen zorgverleners en oudere patiënten vaak elementen van 'Elderspeak' bevat. Dit duidt op een onevenwichtigheid in de zorgrelatie. waarbij de zorgverlener mogelijk onbewust een taal en toon gebruikt die ouderen infantiliseren of neerbuigend behandelen.
@@ -138,12 +140,14 @@ Kaldi vertegenwoordigt een uitgebreid kader voor het uitvoeren van onderzoek naa
 
 \section{Evaluatiemethoden en metrics}
 \subsection{Belang van evaluatie binnen ASR}
-Evaluatie van automatische spraakherkenning (ASR) systemen is essentieel 
-om te begrijpen hoe goed ze presteren vanuit het perspectief van menselijke gebruikers, wat cruciaal is voor het meten van hun bruikbaarheid en het beoordelen van overgebleven uitdagingen, vooral bij het vergelijken van verschillende systemen. 
+Evaluatie van \gls{asr} systemen is essentieel 
+om te begrijpen hoe goed ze presteren vanuit het perspectief van menselijke gebruikers.
+
+ Deze laatste is cruciaal voor het meten van hun bruikbaarheid en het beoordelen van overgebleven uitdagingen, vooral bij het vergelijken van verschillende systemen. 
 
 Ondanks de vooruitgang van ASR tot commercieel bruikbare toepassingen, blijft een hoge foutenmarge in sommige spraakherkenningsdomeinen een belangrijke belemmering voor de bredere adoptie van spraaktechnologie, met name voor toepassingen die continue spraakherkenning met een grote woordenschat vereisen.
 
-De aanhoudende aanwezigheid van ASR-fouten heeft de noodzaak versterkt om alternatieve technieken te vinden voor het automatisch detecteren en corrigeren van dergelijke fouten. De correctie van transcriptiefouten is niet alleen cruciaal om de nauwkeurigheid van spraakherkenning te verbeteren, maar ook om te voorkomen dat fouten doorstromen naar volgende taalverwerkingsmodules, zoals machinevertaling \autocite{Errattahi_2018}.
+De aanhoudende aanwezigheid van ASR-fouten heeft de noodzaak versterkt om alternatieve technieken te vinden voor het automatisch detecteren en corrigeren van dergelijke fouten. De correctie van transcriptie-fouten is niet alleen cruciaal om de nauwkeurigheid van spraakherkenning te verbeteren, maar ook om te voorkomen dat fouten doorstromen naar volgende taalverwerkingsmodules, zoals machinevertaling \autocite{Errattahi_2018}.
 
 Het onderzoek van \textcite{Errattahi_2018} focust op opkomende technieken die de foutenratio meten en de staat van het onderzoek naar de detectie en correctie van ASR-fouten evalueren. Automatische detectie en correctie van ASR-fouten is een belangrijk onderzoeksgebied geworden, niet alleen om de nauwkeurigheid van spraakherkenning te verbeteren, evenals het verhinderen dat fouten worden doorgegeven aan processen na herkenning, zoals machinevertaling en mens-computer interactie. Het doel is om fouten automatisch te detecteren, te classificeren en vervolgens gedeeltelijk of volledig te corrigeren, ongeacht het gebruikte ASR-systeem. Dit kan bijzonder effectief zijn, vooral wanneer het ASR-systeem wordt gebruikt als een 'black-box' waarbij de gebruiker geen toegang heeft om de kenmerken en modellen van het ASR-systeem af te stellen.
 
@@ -284,6 +288,28 @@ Waarbij:
     \item $N$ Het totale aantal karakters in de referentie.
 \end{itemize}
 
+\subsection{Word Information Lost (WIL)}
+
+De \gls{wil} ratio is een evaluatiemethode voor de prestaties van spraak-naar-tekst transcripties. Deze methode meet het percentage foutief voorspelde woorden tussen de werkelijke tekst (ground-truth) en de gegenereerde hypothese (hypothesis sentences). 
+
+WIL varieert van 0 (geen fouten) tot 1 (geen correcte voorspellingen). Het is een beter alternatief dan de Word Error Rate \gls{wer} voor applicaties waarbij de hoeveelheid gecommuniceerde informatie belangrijker is dan de kosten van het maken van een bewerking.
+
+Dit komt omdat beide maten vergelijkbare scores geven wanneer de fouten laag zijn, wat aangeeft dat de theoretische basis van de WER niet altijd relevant is. De formule voor het berekenen van WIL is als volgt:
+
+
+\begin{equation}
+    WIL = 1 - \frac{H^2}{(H + S + D)(H + S + I)}
+\end{equation}
+
+
+Waarbij:
+
+\begin{itemize}
+    \item $H$ Het aantal correct getranscribeerde woorden (hits)
+    \item $S$ Het aantal woordvervangingen (substitutions).
+    \item $D$ Het aantal woorddeleties (deletions).
+    \item $D$ Het aantal woordinvoegingen (insertions).
+\end{itemize}
 \subsection{Het belang van sampeling en data verzameling}
 Bij het evalueren van Automatische Spraakherkenning (ASR) systemen is het kiezen van de juiste monsters essentieel voor een nauwkeurige beoordeling. Het proces omvat de volgende stappen \autocite{awsmlblog2023}:
 

@@ -23,6 +23,21 @@
 %% import instead:
 \usepackage[section,outputdir=../output]{minted}
 \usepackage{placeins}
+\usepackage{listings}
+
+\usepackage{xcolor}  % Required for setting custom colors
+
+\lstset{
+    backgroundcolor=\color{lightgray},  % Set the background color for the snippet
+    basicstyle=\ttfamily\small,         % Set the basic style
+    breaklines=true,                    % Enable line breaking
+    captionpos=b,                       % Set the caption position to bottom
+    frame=single,                       
+    language=Python,                    % Set the programming language (optional)
+    showstringspaces=false,             % Do not show spaces in strings as special characters
+    keywordstyle=\color{blue},          % Set keyword style
+    stringstyle=\color{red}             % Set string style
+}
 \usepackage{acronym}
 \usepackage[nonumberlist,acronym,toc]{glossaries} % Include the glossaries package
 \makeglossaries
@@ -32,10 +47,16 @@
 \newacronym{ai}{AI}{Artificiële Intelligentie}
 \newacronym{wer}{WER}{Word Error Rate}
 \newacronym{cer}{CER}{Character Error Rate}
-\newacronym{stt}{STT}{Speech To Text} %page 15
+\newacronym{mer}{MER}{Match Error Rate}
+\newacronym{wil}{WIL}{Word Information Error}
+\newacronym{wip}{WIP}{Word Information Preserved}
 \newacronym{jwd}{JWD}{Jaro Winkler Dinstance}
 \newacronym{ui}{UI}{User Interface}
 \newacronym{aws}{AWS}{Amazon Web Services}
+\newacronym{stt}{STT}{Speech To Text}
+\newacronym{mvvm}{MVVM}{Model View ViewModel}
+
+
 
 
 \usemintedstyle{solarized-light}
@@ -157,6 +178,7 @@
 \input{methodologie}
 \input{onderzoek}
 \input{poc}
+\input{conclusie}
 \input{bijlagen}
 % Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
 % vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
@@ -166,7 +188,7 @@
 %\input{...}
 %...
 
-\input{conclusie}
+
 
 %---------- Bijlagen -----------------------------------------------------------
 
@@ -190,7 +212,7 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 %\input{...}
 
 %%---------- Backmatter, referentielijst ---------------------------------------
-\printglossary[type=\acronymtype,title=List of Abbreviations]
+
 
 
 \backmatter{}
