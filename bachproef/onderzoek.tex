@@ -6,24 +6,25 @@
 \label{ch:onderzoek}
 
 
-Het onderzoek begint met een overzicht van de samples die zorgvuldig zijn geselecteerd om een representatief beeld te geven van verschillende accenten en variaties in de Nederlandse taal. De samples omvatten een breed spectrum, waaronder een accent uit Antwerpen, Limburg, Brugge, Gent, en ook een sample van algemeen Nederlands.
+Het onderzoek begint met een overzicht van de steekproeven die zorgvuldig zijn geselecteerd om een representatief beeld te geven van verschillende accenten en variaties in de Nederlandse taal. De steekproeven omvatten een breed spectrum, waaronder een accent uit Antwerpen, Limburg, Brugge, Gent en ook een steekproef van algemeen Nederlands.
 \section{Steekproefneming}
-De samples worden onderworpen aan zowel handmatige transcriptie (groundtruth) als transcribering door de gekozen AI-modellen. Deze stap zorgt ervoor dat we een vergelijking kunnen maken tussen de menselijke transcriptie en de prestaties van de AI-modellen.
+De steekproeven worden onderworpen aan zowel handmatige transcriptie (referentietekst) als transcriberen door de gekozen AI-modellen. Deze stap zorgt ervoor dat we een vergelijking kunnen maken tussen de menselijke transcriptie en de prestaties van de AI-modellen.
 
 \begin{table}[htbp]
     \centering
-    \caption{Overzicht van de samples}
+    
     \label{tab:samples}
     \begin{tabular}{l||r}
         \hline
         \toprule
-        Sample & Accent \\ \midrule
-        Sample 1 & Antwerps \\
-        Sample 2 & Limburgs \\
-        Sample 3 & Brugs \\
-        Sample 4 & Gents \\
-        Sample 5 & Algemeen Nederlands \\ \bottomrule
+        Steekproef & Accent \\ \midrule
+        Audio-opname 1 & Antwerps \\
+        Audio-opname 2 & Limburgs \\
+        Audio-opname 3 & Brugs \\
+        Audio-opname 4 & Gents \\
+        Audio-opname 5 & Algemeen Nederlands \\ \bottomrule
     \end{tabular}
+    \caption{Overzicht van de steekproeven}
 \end{table}
 
 
@@ -31,27 +32,28 @@ Na het verkrijgen van de transcripties worden ze geëvalueerd met behulp van de 
 
 Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, patronen en eventuele discrepanties te identificeren. Op basis van deze analyse wordt een weloverwogen beslissing genomen. Deze beslissing kan variëren van het selecteren van het meest geschikte AI-model voor een bepaald accent tot het identificeren van gebieden waar verdere verbeteringen nodig zijn in de transcriberingstechnologie.
 
-\section{Groundtruth en Transcripties van modellen}
+\section{Referentietekst en Transcripties van modellen}
 
 
-\subsection{Sample 1}
+\subsection{Audio-opname 1 - Antwerps}
 
 \begin{table}[htbp]
     \centering
     \label{tab:groundtruth_sample1}
     \begin{tabularx}{\textwidth}{|X|}
         \hline
-            \textbf{Ground truth} \\
+            \textbf{Referentietekst} \\
         \hline
             Dag Moniekske, het is tijd voor in ons trammeke te kruipen eh! allee eerst ons pyjamake aandoen en dan lekker in onze bedeke. zie wat ik hier heb, ons favorite boek. zal ik eens een stukske voorlezen zodat onze moniekske rustig. allez , nu ga ik de lampen uitdoen he suske. zeg maar slaapwel tegen jantje maan. Tot morgen ! \\
         \hline
     \end{tabularx}
-    \caption{Referentie tekst van sample 1.} 
+    \caption{Referentie tekst van audio-opname 1.} 
 \end{table}
 
 \begin{table}[htbp]
     \centering
     \label{tab:results_sample1}
+    \caption{Transcriptie resultaten van audio-opname 1.}
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
@@ -74,28 +76,28 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
         Azure Transcribe & Dag Moniek Cje Het is tijd voor in ons trammetje te kruipen, hè? Alle eerst ons pyjama kan aandoen en dan lekker in ons bedje. Zie die is, wat denk ik hier hem oude favoriete boek zal ik een stukje voorlezen, zodat ons Monique waar rustig gaan worden. Alle Nei Gong de lampjes de toen is zusje, zegt Morse Oppel tegen Janneke man tot morgen
          \\ \hline
     \end{tabularx}
-    \caption{Resultaten van transcripties}
 \end{table}
 \FloatBarrier
-\subsection{Sample 2}
+\subsection{Audio-opname 2 - Limburgs}
 
 \begin{table}[htbp]
     \centering
     \label{tab:groundtruth_sample2}
     \begin{tabularx}{\textwidth}{|X|}
         \hline
-        \textbf{Ground truth} \\
+        \textbf{Referentietekst} \\
         
         \hline
         Had dog Georgette ja tis bedtijd he, ja komt laten we onze gezellige pyjama aantrekken en lekker in bed kruipen hier is uwe favoriete voorleesboek voor slapen gaan nog he, wilt ge dat ik er een stukske uit voorlees? Ale laten we de lampen uit doen en welterusten zeggen tegen de sterren, alé zoete Drome \\
         \hline
     \end{tabularx}
-    \caption{Referentie tekst van sample 2.}
+    \caption{Referentie tekst van Audio-opname 2.}
 \end{table}
 
 \begin{table}[htbp]
     \centering
     \label{tab:results_sample2}
+        \caption{Transcriptie resultaten van audio-opname 2.}
     \begin{tabularx}{\textwidth}{|l|X|}
     \hline
     \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
@@ -127,24 +129,26 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
 \end{table}
 \FloatBarrier
 
-\subsection{Sample 3}
+\subsection{Audio-opname 3 - Brugs}
 \begin{table}[htbp]
     \centering
     \label{tab:groundtruth_sample3}
+    
     \begin{tabularx}{\textwidth}{|X|}
         \hline
-        \textbf{Ground truth} \\
+        \textbf{Referentietekst} \\
         
         \hline
         Iersi doarsi, eje gie tied veur e kleine medikoasjrituele? We gon behinnen met uze vitamienes te pakkn lik broave joenges e, iere je toverpille om je sterk en hezond te oedn. Mondje open we goan der helehans in en zukke broave patiente zieje \\
         \hline
     \end{tabularx}
-    \caption{Referentie tekst van sample 3.}
+    \caption{Referentie tekst van Audio-opname 3.}
 \end{table}
 
 \begin{table}[htbp]
     \centering
     \label{tab:results_sample3}
+        \caption{Transcriptie resultaten van audio-opname 3.}
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{AI Model} & \textbf{Transcriptie} \\ \midrule
@@ -172,28 +176,28 @@ Ten slotte wordt een grondige analyse van de resultaten uitgevoerd om trends, pa
         
         \\ \hline
     \end{tabularx}
-    \caption{Resultaten van transcripties}
+
 \end{table}
 \FloatBarrier
 
-\subsection{Sample 4}
+\subsection{Audio-opname 4 - Gents}
 \begin{table}[htbp]
     \centering
-    \caption{Ground truth for Sample 4}
+
     \label{tab:groundtruth_sample4}
     \begin{tabularx}{\textwidth}{|X|}
         \hline
-        \textbf{Ground truth} \\
+        \textbf{Referentietekst} \\
         \hline
         Goedenavond Rogier, zeg het is tijd om in bed te kruipen, ik ga jou helpen om je pyjama aan te doen uhum en dan ga ik je ook helpen met in bed te gaan liggen goed? Hier ik ga jouw boek bij je leggen dan kun je nog wat lezen. Of had je graag dat ik een beetje voorlees nee? Goed. Ik ga dan de lampen uitdoen, slaapwel! en zoete dromen hé Rogier! \\
         \hline
     \end{tabularx}
-    \caption{Referentie tekst van sample 4.}
+    \caption{Referentie tekst van Audio-opname 4.}
 \end{table}
 
 \begin{table}[htbp]
     \centering
-    \caption{Transcriptie resultaten van Sample 4}
+    \caption{Transcriptie resultaten van audio-opname 4.}
     \label{tab:results_sample4}
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
@@ -228,24 +232,24 @@ Azure Transcribe &  Goeienavond Roger zet de strijd om in bed te kruipen. Kan u 
     \end{tabularx}
 \end{table}
 \FloatBarrier
-\subsection{Sample 5}
+\subsection{Audio-opname 5 - Algemeen Nederlands}
 \begin{table}[htbp]
     \centering
     \label{tab:groundtruth_sample5}
     \begin{tabularx}{\textwidth}{|X|}
         \hline
-        \textbf{Ground truth} \\
+        \textbf{Referentietekst} \\
         \hline
         Hallo, Andreke! Het is bedtijd voor ons, nietwaar? Laten we onze gezellige pyjama aantrekken en lekker in bed kruipen. Hier is je favoriete voorleesboek voor het slapengaan. Wil je dat ik je een hoofdstuk voorlees? Laten we de lampen uitdoen en welterusten zeggen tegen de sterren. Zoete dromen! \\
         \hline
     \end{tabularx}
-        \caption{Referentie tekst van sample 5.}
+        \caption{Referentie tekst van Audio-opname 5.}
 \end{table}
 
 
 \begin{table}[htbp]
     \centering
-    \caption{Transcriptie resultaten van Sample 5}
+    \caption{Transcriptie resultaten van Audio-opname 5}
     \label{tab:results_sample4}
     \begin{tabularx}{\textwidth}{|l|X|}
         \hline
@@ -351,66 +355,70 @@ Azure Transcribe &  Goeienavond Roger zet de strijd om in bed te kruipen. Kan u 
     \centering
     \includegraphics[width=1\textwidth]{modellenprestaties_wer.png}
     \captionsetup{justification=centering}
-    \caption{Resultaat van Modellenprestaties adhv WER}
+    \caption{Resultaat van Modellenprestaties adhv \gls{wer}}
     \label{fig:modellenprestaties_wer}
 \end{figure}
 \FloatBarrier
-De WER-grafiek \ref{fig:modellenprestaties_wer} toont duidelijke pieken en dalen, wat wijst op variabiliteit in de prestaties over de verschillende samples. AssemblyAI en WhisperAI laten een meer consistente lijn zien, wat suggereert dat deze modellen beter generaliseren over verschillende soorten audio-invoer.
+
+De grafiek \ref{fig:modellenprestaties_wer} toont de \gls{wer} scores van verschillende AI-modellen voor Vlaamse accenten. AssemblyAI behaalt consequent de laagste \gls{wer}-scores, wat wijst op de hoogste nauwkeurigheid.
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{modellenprestaties_mer.png}
     \captionsetup{justification=centering}
-    \caption{Resultaat van Modellenprestaties adhv MER}
+    \caption{Resultaat van Modellenprestaties adhv \gls{mer}}
     \label{fig:modellenprestaties_mer}
 \end{figure}
 \FloatBarrier
-De MER-scores vertonen meer variabiliteit tussen de modellen, waarbij sommige modellen zoals Azure en AssemblyAI in bepaalde samples beter presteren dan anderen. Dit kan wijzen op de behoefte aan model-specifieke optimalisaties afhankelijk van de kenmerken van de audiobron.
 
+Op basis van de \gls{mer}-scores in de grafiek \ref{fig:modellenprestaties_mer} kan worden geconcludeerd dat AssemblyAI de meest betrouwbare en nauwkeurige prestaties levert bij het matchen van transcripties.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{modellenprestaties_wil.png}
     \captionsetup{justification=centering}
-    \caption{Resultaat van Modellenprestaties adhv WIL}
-    \label{fig:modellenprestaties}
+    \caption{Resultaat van Modellenprestaties adhv \gls{wil}}
+    \label{fig:modellenprestaties_wil}
 \end{figure}
 \FloatBarrier
-De WIL-resultaten zijn vrij stabiel voor sommige modellen zoals Google Cloud TTS en Azure, wat duidt op een betrouwbare bewaring van informatie bij transcriptie. Andere modellen tonen hogere pieken, wat wijst op momenten waarop belangrijke informatie verloren gaat, wat kritisch kan zijn in praktische toepassingen.
+Op basis van de \gls{wil}-scores in de grafiek \ref{fig:modellenprestaties_wil} kan worden geconcludeerd dat AssemblyAI de meest betrouwbare en nauwkeurige prestaties levert bij het transcriberen van Vlaamse accenten, met het minste informatieverlies.
 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{modellenprestaties_wip.png}
     \captionsetup{justification=centering}
-    \caption{Resultaat van Modellenprestaties adhv WIP}
-    \label{fig:modellenprestaties_mer}
+    \caption{Resultaat van Modellenprestaties adhv \gls{wip}}
+    \label{fig:modellenprestaties_wip}
 \end{figure}
 \FloatBarrier
-Deze grafiek toont de mate van informatiebehoud en toont vergelijkbare trends met de WIL, maar dan omgekeerd. Modellen die goed presteren op WIL-scoren, scoren logischerwijs laag op WIP, aangezien minder informatie verloren gaat. Dit suggereert dat modellen zoals Azure en Google Cloud TTS effectiever zijn in het behouden van de essentiële elementen van de gesproken inhoud.
+Op basis van de WIP-scores in de grafiek \ref{fig:modellenprestaties_wip} kan worden geconcludeerd dat AssemblyAI de meest betrouwbare en nauwkeurige prestaties levert bij het transcriberen van Vlaamse accenten, met het meeste behoud van informatie.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{modellenprestaties_cer.png}
     \captionsetup{justification=centering}
     \caption{Resultaat van Modellenprestaties adhv CER}
-    \label{fig:modellenprestaties_mer}
+    \label{fig:modellenprestaties_cer}
 \end{figure}
 \FloatBarrier
-De grafiek laat een algemeen lage CER zien over alle modellen, wat duidt op een sterke nauwkeurigheid in de karakterherkenning. Het model van WhisperAI vertoont echter meer fluctuaties, wat kan wijzen op inconsistenties in verschillende samples. De stabiliteit van Azure en Google Cloud TTS is opmerkelijk, wat hen betrouwbaar maakt voor toepassingen waar consistentie cruciaal is.
 
+De grafiek \ref{fig:modellenprestaties_cer} toont een algemeen lage \gls{cer} voor alle modellen, wat wijst op een hoge nauwkeurigheid in karakterherkenning. Het model AssemblyAI vertoont consequent lage waarden, wat de betrouwbaarheid ervan verder bevestigt.
 \subsection{Conclusie}
 
-De analyse van de prestaties van verschillende spraak-naar-tekst modellen op verschillende Nederlandse dialecten toont significante variabiliteit in de uitkomsten over de diverse metrics: WER (Word Error Rate), MER (Match Error Rate), WIL (Word Information Lost), WIP (Word Information Preserved), en CER (Character Error Rate). Opvallend is dat de WER-waarden variëren van zo laag als 0.208 voor assemblyAI in sample5 algemeenNederlands tot boven 1.0 voor whisperAI in sample2 limburg, wat duidt op inconsistente prestaties over de samples heen. WhisperAI en assemblyAI tonen significante verschillen in prestatie, met whisperAI die over het algemeen hogere error rates vertoont, wat kan wijzen op mindere efficiëntie in het omgaan met dialectische variaties vergeleken met assemblyAI.
+De analyse van de prestaties van verschillende spraak-naar-tekst modellen op verschillende Nederlandse dialecten toont significante variabiliteit in de uitkomsten over de diverse metrics: \gls{wer}, \gls{mer}, \gls{wil}, \gls{wip}, en \gls{cer}.
+Opvallend is dat de \gls{wer}-waarden variëren van zo laag als 0.20 voor assemblyAI in audio-opname 5 algemeenNederlands tot boven 1.0 voor whisperAI in audio-opname 2 Limburgs, wat duidt op inconsistente prestaties over de audio-opnames heen. 
 
-De CER, die de fouten op karakterbasis meet, toont een vergelijkbare trend, met lagere scores voor assemblyAI in algemeen Nederlands maar hogere scores in meer regionaal gekleurde dialogen zoals die uit Brugge en Gent. Dit suggereert dat sommige modellen beter zijn in het algemene Nederlands dan in het verwerken van regionale accenten.
+WhisperAI en assemblyAI tonen significante verschillen in prestatie, met whisperAI die over het algemeen hogere ratios vertoont, wat kan wijzen op mindere efficiëntie in het omgaan met dialectische variaties vergeleken met assemblyAI.
 
-De variatie in WIL en WIP indiceert hoeveel informatie verloren gaat of behouden blijft tijdens de transcriptie, waarbij wav2vec2 consistent hoog scoort op het behoud van informatie over bijna alle samples. De resultaten suggereren dat geen enkel model universeel superieur is over alle metrieken, en dat de keuze voor een specifiek model kan afhangen van de specifieke eisen van de taak en de kenmerken van het dialect.
+De \gls{cer}, die de fouten op karakterbasis meet, toont een vergelijkbare trend, met lagere scores voor AssemblyAI in algemeen Nederlands maar hogere scores in meer regionaal gekleurde dialogen zoals die uit Brugge en Gent. Dit suggereert dat sommige modellen beter zijn in het algemene Nederlands dan in het verwerken van regionale accenten.
+
+De variatie in \gls{wil} en \gls{wip} indiceert hoeveel informatie verloren gaat of behouden blijft tijdens de transcriptie, waarbij wav2vec2 consistent hoog scoort op het behoud van informatie over bijna alle audio-opnames. De resultaten suggereren dat geen enkel model universeel superieur is over alle metrieken, en dat de keuze voor een specifiek model kan afhangen van de specifieke eisen van de taak en de kenmerken van het dialect.
 
 \section{Evaluatie Code}
 
-In deze code \ref{lst:evaluatie_code}, wordt een tabel samengesteld die de prestaties van alle modellen weergeeft. De transcriptiegegevens, opgeslagen in een JSON-bestand, worden ingeladen. Vervolgens gebruikt men de Jiwer-bibliotheek om diverse meetwaarden, zoals Word Error Rate (WER) en andere relevante metrics, te berekenen. Na het berekenen worden deze gegevens opgeslagen in een CSV-bestand voor verdere analyse.
+In deze code \ref{lst:evaluatie_code}, wordt een tabel samengesteld die de prestaties van alle modellen weergeeft. De transcriptiegegevens, opgeslagen in een \gls{json}-bestand, worden ingeladen. Vervolgens gebruikt men de Jiwer-bibliotheek om diverse meetwaarden, zoals \gls{wer} en andere relevante metrieken, te berekenen. Na het berekenen worden deze gegevens opgeslagen in een \gls{csv}-bestand voor verdere analyse.
 
-Daarnaast zijn er aanvullende scripts beschikbaar die de transcripties verzorgen met behulp van modellen zoals Azure, Wav2Vec2 en Whisper. Deze scripts zijn opgenomen als bijlagen en kunnen worden geraadpleegd via de volgende link \autocite{AitCheikhAhmed2024}. Voor andere modellen, namelijk AssemblyAI, Google Cloud STT en AWS Transcriber, wordt de transcriptie gegenereerd via hun respectievelijke interfaces, waarvoor geen apart script vereist is.
+Daarnaast zijn er aanvullende scripts beschikbaar die de transcripties verzorgen met behulp van modellen zoals Azure, Wav2Vec2 en Whisper. Deze scripts zijn opgenomen als bijlagen en kunnen worden geraadpleegd via de volgende link \autocite{AitCheikhAhmed2024}. Voor andere modellen, namelijk AssemblyAI, Google Cloud \gls{stt} en AWS Transcriber, wordt de transcriptie gegenereerd via hun respectievelijke interfaces, waarvoor geen apart script vereist is.
 
 \pagebreak
 \begin{lstlisting}[caption={Evaluatie code}, label={lst:evaluatie_code}]

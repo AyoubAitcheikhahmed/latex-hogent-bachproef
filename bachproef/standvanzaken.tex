@@ -6,7 +6,7 @@
 
 Het hoofdstuk over literatuurstudie vormt een essentieel fundament voor dit onderzoek, diep inzicht ge­eft in wat er al beke­nd is over het onderwe­rp. Door een gedegen literatuurstudie uit te voeren, kunnen we verschillende cruciale doelen bereiken die de basis leggen voor ons onderzoek.
 
-In dit onderzoek worden verschillende \gls{asr}  modellen die momenteel op de markt beschikbaar zijn, vergeleken aan de hand van specifieke nauwkeurigheidsmetrieken om het beste model te selecteren voor een nauwkeurigere identificatie van kenmerken van "Secondary Babytalk". Door het selecteren van het meest geschikte model en het uitvoeren van benchmarking, streven we ernaar de communicatie tussen zorgverleners en oudere patiënten te verbeteren. 
+In dit onderzoek worden verschillende \gls{asr} modellen die momenteel op de markt beschikbaar zijn, vergeleken aan de hand van specifieke nauwkeurigheidsmetrieken om het beste model te selecteren voor een nauwkeurigere identificatie van kenmerken van "Secondary Babytalk".
 
 
 De benchmarking zal worden uitgevoerd door de prestaties van de verschillende modellen te vergelijken aan de hand van gevestigde criteria, zoals de \gls{wer} en de \gls{jwd}. 
@@ -131,11 +131,11 @@ Amazon Transcribe heeft uitgebreide functies voor verschillende zakelijke sector
 Wav2vec-U, ontwikkeld door Facebook \gls{ai}, is een innovatieve benadering voor spraakherkenning die geen getranscribeerde gegevens vereist. Het model is vergelijkbaar met de prestaties van de best begeleide modellen van enkele jaren geleden, getraind met bijna 1000 uur aan getranscribeerde spraak. Deze methode, die spraakstructuren leert uit ongelabelde audio met behulp van een zelf-superviserend model en k-means clustering, is een belangrijke stap naar toegankelijkere spraaktechnologie voor een breed scala aan talen en dialecten \autocite{wav2vecu2021}.
 
 \subsubsection{Hugging Face}
-Hugging Face's ASR-technologie, onderdeel van de Transformers-bibliotheek, biedt uitgebreide ondersteuning voor het ontwikkelen van geavanceerde spraak-naar-teksttoepassingen. Deze technologie stelt ontwikkelaars en onderzoekers in staat om toegankelijke en efficiënte ASR-oplossingen te creëren, dankzij de mogelijkheid tot het 'fine-tuning' van modellen zoals Wav2Vec2 en de ondersteuning van een breed scala aan talen en dialecten \autocite{huggingface2023asr}.
+Hugging Face's \gls{asr}-technologie, onderdeel van de Transformers-bibliotheek, biedt uitgebreide ondersteuning voor het ontwikkelen van geavanceerde spraak-naar-teksttoepassingen. Deze technologie stelt ontwikkelaars en onderzoekers in staat om toegankelijke en efficiënte \gls{asr}-oplossingen te creëren, dankzij de mogelijkheid tot het 'fine-tuning' van modellen zoals Wav2Vec2 en de ondersteuning van een breed scala aan talen en dialecten \autocite{huggingface2023asr}.
 
 \subsubsection{Kaldi}
 
-Kaldi vertegenwoordigt een uitgebreid kader voor het uitvoeren van onderzoek naar spraakherkenning, waarbij een breed scala aan hulpmiddelen wordt geboden voor modellering en analyse. Ontwikkeld met als doel de ontwikkeling van robuuste en efficiënte ASR-systemen te vergemakkelijken. Kaldi onderscheidt zich door zijn ondersteuning voor lineaire algebra operaties, flexibiliteit in het modelleren van complexe spraakpatronen, en zijn open-source aard, wat samenwerking en innovaties binnen de gemeenschap van spraakherkenning aanmoedigt \autocite{Povey_ASRU2011}.
+Kaldi vertegenwoordigt een uitgebreid kader voor het uitvoeren van onderzoek naar spraakherkenning, waarbij een breed scala aan hulpmiddelen wordt geboden voor modellering en analyse. Ontwikkeld met als doel de ontwikkeling van robuuste en efficiënte \gls{asr}-systemen te vergemakkelijken. Kaldi onderscheidt zich door zijn ondersteuning voor lineaire algebra operaties, flexibiliteit in het modelleren van complexe spraakpatronen, en zijn open-source aard, wat samenwerking en innovaties binnen de gemeenschap van spraakherkenning aanmoedigt \autocite{Povey_ASRU2011}.
 
 
 \section{Evaluatiemethoden en metrics}
@@ -145,18 +145,18 @@ om te begrijpen hoe goed ze presteren vanuit het perspectief van menselijke gebr
 
  Deze laatste is cruciaal voor het meten van hun bruikbaarheid en het beoordelen van overgebleven uitdagingen, vooral bij het vergelijken van verschillende systemen. 
 
-Ondanks de vooruitgang van ASR tot commercieel bruikbare toepassingen, blijft een hoge foutenmarge in sommige spraakherkenningsdomeinen een belangrijke belemmering voor de bredere adoptie van spraaktechnologie, met name voor toepassingen die continue spraakherkenning met een grote woordenschat vereisen.
+Ondanks de vooruitgang van \gls{asr} tot commercieel bruikbare toepassingen, blijft een hoge foutenmarge in sommige spraakherkenningsdomeinen een belangrijke belemmering voor de bredere adoptie van spraaktechnologie, met name voor toepassingen die continue spraakherkenning met een grote woordenschat vereisen.
 
-De aanhoudende aanwezigheid van ASR-fouten heeft de noodzaak versterkt om alternatieve technieken te vinden voor het automatisch detecteren en corrigeren van dergelijke fouten. De correctie van transcriptie-fouten is niet alleen cruciaal om de nauwkeurigheid van spraakherkenning te verbeteren, maar ook om te voorkomen dat fouten doorstromen naar volgende taalverwerkingsmodules, zoals machinevertaling \autocite{Errattahi_2018}.
+De aanhoudende aanwezigheid van \gls{asr}-fouten heeft de noodzaak versterkt om alternatieve technieken te vinden voor het automatisch detecteren en corrigeren van dergelijke fouten. De correctie van transcriptie-fouten is niet alleen cruciaal om de nauwkeurigheid van spraakherkenning te verbeteren, maar ook om te voorkomen dat fouten doorstromen naar volgende taalverwerkingsmodules, zoals machinevertaling \autocite{Errattahi_2018}.
 
-Het onderzoek van \textcite{Errattahi_2018} focust op opkomende technieken die de foutenratio meten en de staat van het onderzoek naar de detectie en correctie van ASR-fouten evalueren. Automatische detectie en correctie van ASR-fouten is een belangrijk onderzoeksgebied geworden, niet alleen om de nauwkeurigheid van spraakherkenning te verbeteren, evenals het verhinderen dat fouten worden doorgegeven aan processen na herkenning, zoals machinevertaling en mens-computer interactie. Het doel is om fouten automatisch te detecteren, te classificeren en vervolgens gedeeltelijk of volledig te corrigeren, ongeacht het gebruikte ASR-systeem. Dit kan bijzonder effectief zijn, vooral wanneer het ASR-systeem wordt gebruikt als een 'black-box' waarbij de gebruiker geen toegang heeft om de kenmerken en modellen van het ASR-systeem af te stellen.
+Het onderzoek van \textcite{Errattahi_2018} focust op opkomende technieken die de foutenratio meten en de staat van het onderzoek naar de detectie en correctie van \gls{asr}-fouten evalueren. Automatische detectie en correctie van \gls{asr}-fouten is een belangrijk onderzoeksgebied geworden, niet alleen om de nauwkeurigheid van spraakherkenning te verbeteren, evenals het verhinderen dat fouten worden doorgegeven aan processen na herkenning, zoals machinevertaling en mens-computer interactie. Het doel is om fouten automatisch te detecteren, te classificeren en vervolgens gedeeltelijk of volledig te corrigeren, ongeacht het gebruikte \gls{asr}-systeem. Dit kan bijzonder effectief zijn, vooral wanneer het \gls{asr}-systeem wordt gebruikt als een 'black-box' waarbij de gebruiker geen toegang heeft om de kenmerken en modellen van het \gls{asr}-systeem af te stellen.
 
-Het doel van ASR-evaluatie is om een vergelijkingscriterium te bieden tussen verschillende systemen of technieken en om de vooruitgang en prestaties op specifieke taken te meten op basis van foutenstatistieken. Er zijn twee essentiële aspecten gerelateerd aan ASR-fouten: de referentie-herkende afstemming, die het vinden van de beste woordafstemming tussen de referentie en de automatische transcriptie omvat, en de evaluatiemetrics die de prestaties van de ASR-systemen meten \autocite{McCowan2004}.
+Het doel van \gls{asr}-evaluatie is om een vergelijkingscriterium te bieden tussen verschillende systemen of technieken en om de vooruitgang en prestaties op specifieke taken te meten op basis van foutenstatistieken. Er zijn twee essentiële aspecten gerelateerd aan \gls{asr}-fouten: de referentie-herkende afstemming, die het vinden van de beste woordafstemming tussen de referentie en de automatische transcriptie omvat, en de evaluatiemetrics die de prestaties van de \gls{asr}-systemen meten \autocite{McCowan2004}.
 
 
-Volgens \textcite{McCowan2004} moeten de eigenschappen van een ideale evaluatiemaatstaf voor ASR als volgt zijn:
+Volgens \textcite{McCowan2004} moeten de eigenschappen van een ideale evaluatiemaatstaf voor \gls{asr} als volgt zijn:
 \begin{enumerate}[label=\arabic*.]
- \item \textbf{Direct:} De maatstaf meet de ASR-component onafhankelijk van de ASR-toepassing.
+ \item \textbf{Direct:} De maatstaf meet de \gls{asr}-component onafhankelijk van de \gls{asr}-toepassing.
  
  \item \textbf{Objectief:} De maatstaf wordt op een geautomatiseerde manier berekend.
  
@@ -165,14 +165,14 @@ Volgens \textcite{McCowan2004} moeten de eigenschappen van een ideale evaluatiem
  \item \textbf{Modulair:} De evaluatiemaatstaf is algemeen genoeg om gedetailleerde toepassingsafhankelijke analyses mogelijk te maken.
 \end{enumerate} 
 
-\subsection{ASR Prestatie factoren}
-ASR-prestaties worden beïnvloed door verschillende factoren, waaronder:
+\subsection{\gls{asr} Prestatie factoren}
+\gls{asr}-prestaties worden beïnvloed door verschillende factoren, waaronder:
 \begin{enumerate}[label=\arabic*.]
     \item \textbf{Sprekervariabiliteit:}
     De akoestische modellen zijn meestal gebaseerd op een beperkte hoeveelheid spraakgegevens die sprekers kenmerken op een bepaald moment en in een bepaalde situatie. Echter, de stem kan veranderen door factoren als veroudering, ziekte, emoties en vermoeidheid, waardoor het akoestische model mogelijk niet representatief is voor alle sprekers in al hun mogelijke staten.
     
     \item \textbf{Variabiliteit in gesproken taal:}
-    Spontane spraak, accenten en een hoge mate van uitspraakvariatie door dialecten en articulatie vormen bekende uitdagingen voor ASR. Met een grote woordenschat wordt het bovendien steeds moeilijker om voldoende gegevens te vinden om de taalmodellen te trainen, wat vaak resulteert in het gebruik van sub-woordenmodellen in plaats van woordenmodellen, wat de prestaties aanzienlijk kan verminderen.
+    Spontane spraak, accenten en een hoge mate van uitspraakvariatie door dialecten en articulatie vormen bekende uitdagingen voor \gls{asr}. Met een grote woordenschat wordt het bovendien steeds moeilijker om voldoende gegevens te vinden om de taalmodellen te trainen, wat vaak resulteert in het gebruik van sub-woordenmodellen in plaats van woordenmodellen, wat de prestaties aanzienlijk kan verminderen.
     
     \item \textbf{Mismatchfactoren:}
     Een van de grootste uitdagingen bij spraakherkenning komt door verschillen in opnamecondities tussen de trainings- en testfasen, vooral wanneer het spraaksignaal via telefoonlijnen wordt verkregen. 
@@ -181,39 +181,39 @@ ASR-prestaties worden beïnvloed door verschillende factoren, waaronder:
 \end{enumerate} 
 
 
-Deze factoren onderstrepen het belang van voortdurende verbetering en aanpassing van ASR-systemen om de uiteenlopende variabiliteiten en mismatchfactoren te kunnen accommoderen en daarmee de algehele systeemprestaties te verbeteren. Het onderzoek en de ontwikkeling van methoden voor het detecteren en corrigeren van ASR-fouten zijn daarom cruciaal voor het vergroten van de bruikbaarheid en acceptatie van ASR-technologieën in diverse toepassingen \autocite{Errattahi_2018}.
+Deze factoren onderstrepen het belang van voortdurende verbetering en aanpassing van \gls{asr}-systemen om de uiteenlopende variabiliteiten en mismatchfactoren te kunnen accommoderen en daarmee de algehele systeemprestaties te verbeteren. Het onderzoek en de ontwikkeling van methoden voor het detecteren en corrigeren van \gls{asr}-fouten zijn daarom cruciaal voor het vergroten van de bruikbaarheid en acceptatie van \gls{asr}-technologieën in diverse toepassingen \autocite{Errattahi_2018}.
 
-\subsection{ASR Fouten detectie}
-In de context van automatische spraakherkenning (ASR) is de detectie van fouten een kritiek aspect dat de bruikbaarheid en intelligentie van ASR-systemen in praktische toepassingen aanzienlijk kan verbeteren \autocite{jiang2005confidence}.
+\subsection{\gls{asr} Fouten detectie}
+In de context van \gls{asr} is de detectie van fouten een kritiek aspect dat de bruikbaarheid en intelligentie van \gls{asr}-systemen in praktische toepassingen aanzienlijk kan verbeteren \autocite{jiang2005confidence}.
 
-Het primaire doel van foutdetectie binnen ASR-systemen, zoals uiteengezet in het onderzoek van \textcite{jiang2005confidence}, is om de betrouwbaarheid van spraak-naar-tekst conversies te verhogen door effectief fouten in transcripties te identificeren. Dit doel is van cruciaal belang omdat zelfs geavanceerde ASR-technologieën te maken hebben met een significante foutmarge als gevolg van factoren zoals achtergrondgeluid, sprekersvariatie, en de complexiteit van taal zelf.
+Het primaire doel van foutdetectie binnen \gls{asr}-systemen, zoals uiteengezet in het onderzoek van \textcite{jiang2005confidence}, is om de betrouwbaarheid van spraak-naar-tekst conversies te verhogen door effectief fouten in transcripties te identificeren. Dit doel is van cruciaal belang omdat zelfs geavanceerde \gls{asr}-technologieën te maken hebben met een significante foutmarge als gevolg van factoren zoals achtergrondgeluid, sprekersvariatie, en de complexiteit van taal zelf.
 
-Foutdetectiemechanismen zijn ontworpen om onnauwkeurigheden in transcripties te identificeren, waarbij onderscheid wordt gemaakt tussen verschillende soorten fouten zoals substitutie, deletie, of invoeging. Een nauwkeurige detectie van deze fouten is essentieel voor daaropvolgende correctiestrategieën, die tot doel hebben de ASR-output dichter bij de daadwerkelijk gesproken inhoud te brengen.
+Foutdetectiemechanismen zijn ontworpen om onnauwkeurigheden in transcripties te identificeren, waarbij onderscheid wordt gemaakt tussen verschillende soorten fouten zoals substitutie, deletie, of invoeging. Een nauwkeurige detectie van deze fouten is essentieel voor daaropvolgende correctiestrategieën, die tot doel hebben de \gls{asr}-output dichter bij de daadwerkelijk gesproken inhoud te brengen.
 
-Verder is in het onderzoek aangegeven dat ASR-foutdetectie de basis vormt voor het verbeteren van de gebruikerservaring in applicaties die afhankelijk zijn van spraakherkenning. Door de ontwikkeling van geavanceerde technieken voor foutdetectie en -correctie kunnen ASR-systemen niet alleen accurater worden, maar ook meer geïntegreerd in een breed scala aan toepassingen, variërend van spraakgestuurde assistenten tot automatische ondertiteling \autocite{jiang2005confidence}.
+Verder is in het onderzoek aangegeven dat \gls{asr}-foutdetectie de basis vormt voor het verbeteren van de gebruikerservaring in applicaties die afhankelijk zijn van spraakherkenning. Door de ontwikkeling van geavanceerde technieken voor foutdetectie en -correctie kunnen \gls{asr}-systemen niet alleen accurater worden, maar ook meer geïntegreerd in een breed scala aan toepassingen, variërend van spraakgestuurde assistenten tot automatische ondertiteling \autocite{jiang2005confidence}.
 
-\subsection{ASR Fouttypes}
-Automatische spraakherkenning (ASR) heeft aanzienlijke vooruitgang geboekt, maar blijft gevoelig voor fouten die de nauwkeurigheid en bruikbaarheid beïnvloeden. Er zijn meerdere typen fouten die in ASR-systemen kunnen voorkomen, elk met specifieke oorzaken en gevolgen \autocite{Errattahi_2018}: 
+\subsection{\gls{asr} Fouttypes}
+Automatische spraakherkenning \gls{asr} heeft aanzienlijke vooruitgang geboekt, maar blijft gevoelig voor fouten die de nauwkeurigheid en bruikbaarheid beïnvloeden. Er zijn meerdere typen fouten die in \gls{asr}-systemen kunnen voorkomen, elk met specifieke oorzaken en gevolgen \autocite{Errattahi_2018}: 
 
 \begin{enumerate}[label=\arabic*.]
     \item \textbf{Substitutiefouten:}
-    treden op wanneer het ASR-systeem een verkeerd woord herkent in plaats van het gesproken woord. Dit kan te wijten zijn aan de gelijkenis in klank tussen woorden of aan de beperkte precisie van het systeem bij het onderscheiden van spraakklanken.
+    treden op wanneer het \gls{asr}-systeem een verkeerd woord herkent in plaats van het gesproken woord. Dit kan te wijten zijn aan de gelijkenis in klank tussen woorden of aan de beperkte precisie van het systeem bij het onderscheiden van spraakklanken.
     
     \item \textbf{Invoegfouten:}
     worden gekenmerkt door het onjuist toevoegen van woorden die niet door de spreker zijn uitgesproken. Deze fouten kunnen ontstaan door achtergrondgeluiden of door het systeem dat ten onrechte pauzes of geluiden interpreteert als woorden.
     
     \item \textbf{Verwijderfouten:}
-    ontstaan wanneer het ASR-systeem een gesproken woord niet detecteert of herkent, waardoor dit woord afwezig is in de transcriptie. Dit kan het gevolg zijn van een lage spreeksnelheid, articulatieproblemen of wanneer het spraaksignaal wordt gemaskeerd door achtergrondlawaai.   
+    ontstaan wanneer het \gls{asr}-systeem een gesproken woord niet detecteert of herkent, waardoor dit woord afwezig is in de transcriptie. Dit kan het gevolg zijn van een lage spreeksnelheid, articulatieproblemen of wanneer het spraaksignaal wordt gemaskeerd door achtergrondlawaai.   
 \end{enumerate}
 
-Het verbeteren van de nauwkeurigheid van ASR en het verminderen van deze fouten vereist geavanceerde technieken, data-augmentatie en robuuste akoestische modellen die beter bestand zijn tegen variabiliteit in spraak en opnameomstandigheden \autocite{Errattahi_2018}.
+Het verbeteren van de nauwkeurigheid van \gls{asr} en het verminderen van deze fouten vereist geavanceerde technieken, data-augmentatie en robuuste akoestische modellen die beter bestand zijn tegen variabiliteit in spraak en opnameomstandigheden \autocite{Errattahi_2018}.
 
-Ondanks deze uitdagingen biedt ASR enorme mogelijkheden voor toepassingen variërend van spraakgestuurd assistenten tot automatische ondertiteling, wat de motivatie vormt voor voortdurend onderzoek en ontwikkeling in dit veld \autocite{Errattahi_2018}.
+Ondanks deze uitdagingen biedt \gls{asr} enorme mogelijkheden voor toepassingen variërend van spraakgestuurd assistenten tot automatische ondertiteling, wat de motivatie vormt voor voortdurend onderzoek en ontwikkeling in dit veld \autocite{Errattahi_2018}.
 
-\subsection{Word Error Rate (WER)}
-Automatische spraakherkenningssystemen (ASR) hebben de afgelopen tien jaar aanzienlijke vooruitgang geboekt, waarbij de Word Error Rate (WER) naar voren is gekomen als de voornaamste maatstaf voor het evalueren van de prestaties van deze systemen \autocite{Raghavan2022}.
+\subsection{Word Error Rate (\gls{wer})}
+Automatische spraakherkenningssystemen \gls{asr} hebben de afgelopen tien jaar aanzienlijke vooruitgang geboekt, waarbij de \gls{wer} naar voren is gekomen als de voornaamste maatstaf voor het evalueren van de prestaties van deze systemen \autocite{Raghavan2022}.
 
-WER is gebaseerd op het concept van de bewerkingsafstand en kwantificeert de nauwkeurigheid van ASR door de verhouding van invoegingen, verwijderingen en vervangingen ten opzichte van het totale aantal tokens in een zin te berekenen. Deze maatstaf is bijzonder effectief voor talen zoals het Engels, die doorgaans één spelling voor elk woord hebben, waardoor WER de algehele correctheid nauwkeurig kan weerspiegelen door de getranscribeerde tekst te vergelijken met de oorspronkelijke spraak \autocite{Raghavan2022}.
+\gls{wer} is gebaseerd op het concept van de bewerkingsafstand en kwantificeert de nauwkeurigheid van \gls{asr} door de verhouding van invoegingen, verwijderingen en vervangingen ten opzichte van het totale aantal tokens in een zin te berekenen. Deze maatstaf is bijzonder effectief voor talen zoals het Engels, die doorgaans één spelling voor elk woord hebben, waardoor \gls{wer} de algehele correctheid nauwkeurig kan weerspiegelen door de getranscribeerde tekst te vergelijken met de oorspronkelijke spraak \autocite{Raghavan2022}.
 
 
 
@@ -232,31 +232,31 @@ waarbij:
     \centering
     \includegraphics[width=0.5\textwidth]{ryan_oconor.png}
     \captionsetup{justification=centering}
-    \caption{Berekening van WER voor een voorbeeldmodeloutput gegeven de grondwaarheid transcriptie \autocite{OConnor2023}.}
+    \caption{Berekening van \gls{wer} voor een voorbeeldmodeloutput gegeven de grondwaarheid transcriptie \autocite{OConnor2023}.}
     \label{fig:voorbeeld}
 \end{figure}
 
-\subsection{Beperkingen van WER}
- Ondanks het wijdverbreide gebruik van WER als een standaardmaat voor de prestaties van ASR-systemen, identificeert het onderzoek enkele belangrijke beperkingen van deze maatstaf. De studie van \textcite{Kwint2023} benadrukt dat WER niet als een absoluut percentage kan worden beschouwd vanwege het ontbreken van een bovengrens. 
+\subsection{Beperkingen van \gls{wer}}
+ Ondanks het wijdverbreide gebruik van \gls{wer} als een standaardmaat voor de prestaties van \gls{asr}-systemen, identificeert het onderzoek enkele belangrijke beperkingen van deze maatstaf. De studie van \textcite{Kwint2023} benadrukt dat \gls{wer} niet als een absoluut percentage kan worden beschouwd vanwege het ontbreken van een bovengrens. 
  
- Dit impliceert dat WER alleen kan aangeven dat het ene systeem beter presteert dan het andere, maar niet noodzakelijkerwijs hoe goed een systeem absoluut is. Daarnaast is WER niet symmetrisch ten aanzien van deleties en invoegingen, waardoor het in lawaaierige omstandigheden meer dan 100\% kan overschrijden door een onevenredige nadruk op invoegingen vergeleken met verwijderingen. Het onderzoek toont aan dat, hoewel WER effectief blijft voor toepassingen zoals dicteren waar fouten handmatig gecorrigeerd kunnen worden, er voor de meeste andere soorten spraakherkenningssystemen, waarbij het doel verder gaat dan louter transcriptie, behoefte is aan alternatieve of aanvullende evaluatiekaders. Dit is vooral relevant in domeinen zoals geautomatiseerde medische rapportage, waar de nauwkeurigheid van de transcriptie directe gevolgen kan hebben voor de kwaliteit van de patiëntenzorg \autocite{Kwint2023}.
+ Dit impliceert dat \gls{wer} alleen kan aangeven dat het ene systeem beter presteert dan het andere, maar niet noodzakelijkerwijs hoe goed een systeem absoluut is. Daarnaast is \gls{wer} niet symmetrisch ten aanzien van deleties en invoegingen, waardoor het in lawaaierige omstandigheden meer dan 100\% kan overschrijden door een onevenredige nadruk op invoegingen vergeleken met verwijderingen. Het onderzoek toont aan dat, hoewel \gls{wer} effectief blijft voor toepassingen zoals dicteren waar fouten handmatig gecorrigeerd kunnen worden, er voor de meeste andere soorten spraakherkenningssystemen, waarbij het doel verder gaat dan louter transcriptie, behoefte is aan alternatieve of aanvullende evaluatiekaders. Dit is vooral relevant in domeinen zoals geautomatiseerde medische rapportage, waar de nauwkeurigheid van de transcriptie directe gevolgen kan hebben voor de kwaliteit van de patiëntenzorg \autocite{Kwint2023}.
 
-Door het analyseren van bestaande medische audio-data en het uitvoeren van een pilot-experiment, onderzoekt deze studie de invloed van elementen zoals accent, stemfrequentie en omgevingslawaai op de kwaliteit van ASR-transcripties. De resultaten wijzen op de significante impact van lawaai op de WER, hoewel het experiment door een beperkt aantal deelnemers geen significante verschillen kon aantonen. Dit onderstreept het belang van verder onderzoek naar de effecten van lawaai, taal en verschillende ASR-technologieën op de nauwkeurigheid van spraakherkenning, vooral in kritieke toepassingen zoals medische rapportage.
+Door het analyseren van bestaande medische audio-data en het uitvoeren van een pilot-experiment, onderzoekt deze studie de invloed van elementen zoals accent, stemfrequentie en omgevingslawaai op de kwaliteit van \gls{asr}-transcripties. De resultaten wijzen op de significante impact van lawaai op de \gls{wer}, hoewel het experiment door een beperkt aantal deelnemers geen significante verschillen kon aantonen. Dit onderstreept het belang van verder onderzoek naar de effecten van lawaai, taal en verschillende \gls{asr}-technologieën op de nauwkeurigheid van spraakherkenning, vooral in kritieke toepassingen zoals medische rapportage.
 
-Het gebruik van de Woord Fout Ratio (WER) als enige maatstaf voor de evaluatie van spraakherkenningssystemen blijkt beperkt. Hoewel WFR een indicatie geeft van de algemene prestaties, mist het nuances, vooral met betrekking tot disfluenties zoals vulwoorden ("uh", "um"). Deze aspecten van spraak, die de denkprocessen van de spreker weerspiegelen, kunnen waardevol zijn voor de ene context maar overbodig voor de andere \textcite{Kwint2023}.
+Het gebruik van \gls{wer} als enige maatstaf voor de evaluatie van spraakherkenningssystemen blijkt beperkt. Hoewel \gls{wer} een indicatie geeft van de algemene prestaties, mist het nuances, vooral met betrekking tot disfluenties zoals vulwoorden ("uh", "um"). Deze aspecten van spraak, die de denkprocessen van de spreker weerspiegelen, kunnen waardevol zijn voor de ene context maar overbodig voor de andere \textcite{Kwint2023}.
 \\
 \\
-Een discrepantie tussen de transcriptie van disfluenties door het model en de ‘grondwaarheid’ transcriptie kan leiden tot een onnauwkeurige WER. Daarom pleit deze analyse voor een evaluatiemethode die rekening houdt met de complexiteit en contextuele afhankelijkheid van spraak, wat zou resulteren in een accurater en relevanter beoordeling van spraakherkenningssystemen \autocite{OConnor2023}.
+Een discrepantie tussen de transcriptie van disfluenties door het model en de ‘grondwaarheid’ transcriptie kan leiden tot een onnauwkeurige \gls{wer}. Daarom pleit deze analyse voor een evaluatiemethode die rekening houdt met de complexiteit en contextuele afhankelijkheid van spraak, wat zou resulteren in een accurater en relevanter beoordeling van spraakherkenningssystemen \autocite{OConnor2023}.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{ryan_oconor_meaning.png}
     \captionsetup{justification=centering}
-    \caption{Voorbeeld van een onnauwkeurige WER resultaat \autocite{OConnor2023}.}
+    \caption{Voorbeeld van een onnauwkeurige \gls{wer} resultaat \autocite{OConnor2023}.}
     \label{fig:voorbeeld}
 \end{figure}
 
-\subsection{Jaro-Winkler Afstand (JW)}
+\subsection{Jaro-Winkler Afstand (\gls{jwd})}
 De Jaro-Winkler-afstand is een algoritme dat in twee delen is opgedeeld. Het eerste deel, de Jaro-implementatie, houdt rekening met de overeenkomende karakters tussen twee strings, ongeacht de volgorde. Als de overeenkomende karakters in een andere volgorde staan, wordt een tolerantievenster gebruikt voor het aantal transposities. De Jaro-Winkler afstand wordt berekend met een formule die de overeenkomsten en transposities tussen de strings in acht neemt, waarbij gewichten kunnen worden toegepast om de invloed van verschillende factoren te moduleren \autocite{Rdazzi2023comparison}.
 
 Het tweede deel, de Winkler-aanpassing, verbetert de Jaro-score door extra gewicht toe te kennen aan strings die in de begin karakters overeenkomen. Dit reflecteert het idee dat overeenkomsten aan het begin van de strings belangrijker zijn voor de totale perceptie van gelijkenis tussen strings. De Jaro-Winkler-afstand wordt dan berekend door aanpassingen aan de oorspronkelijke Jaro-score toe te voegen op basis van de overeenkomst aan het begin van de strings en de totale lengte van de strings \autocite{Rdazzi2023comparison}.
@@ -273,9 +273,9 @@ Waarbij:
 \end{itemize}
 
 
-\subsection{Character Error Rate (CER)}
-Het karakterfoutpercentage (CER) biedt een gedetailleerde methode voor het evalueren van automatische spraakherkenningsystemen (ASR) door de prestaties op karakterniveau te beoordelen, in tegenstelling tot het woordfoutpercentage (WER), dat beoordelingen op woordniveau uitvoert. CER is vooral nuttig in talen zonder duidelijke woordgrenzen of in situaties waar nauwkeurigheid op karakterniveau cruciaal is. 
-Hoewel WER veel gebruikt wordt voor een alomvattende beoordeling in veel talen, maakt CER gerichte verbeteringen in ASR-systemen mogelijk, waardoor het een cruciale rol speelt in linguïstische en technische toepassingen die hoge nauwkeurigheid vereisen \autocite{huggingface2023asr}.
+\subsection{Character Error Rate (\gls{cer})}
+Het karakterfoutpercentage (CER) biedt een gedetailleerde methode voor het evalueren van \gls{asr} door de prestaties op karakterniveau te beoordelen, in tegenstelling tot het woordfoutpercentage (\gls{wer}), dat beoordelingen op woordniveau uitvoert. \gls{cer} is vooral nuttig in talen zonder duidelijke woordgrenzen of in situaties waar nauwkeurigheid op karakterniveau cruciaal is. 
+Hoewel \gls{wer} veel gebruikt wordt voor een alomvattende beoordeling in veel talen, maakt CER gerichte verbeteringen in \gls{asr}-systemen mogelijk, waardoor het een cruciale rol speelt in linguïstische en technische toepassingen die hoge nauwkeurigheid vereisen \autocite{huggingface2023asr}.
 
 \begin{equation}
     CER = \frac{S + D + I}{N}
@@ -288,13 +288,13 @@ Waarbij:
     \item $N$ Het totale aantal karakters in de referentie.
 \end{itemize}
 
-\subsection{Word Information Lost (WIL)}
+\subsection{Word Information Lost (\gls{wil})}
 
-De \gls{wil} ratio is een evaluatiemethode voor de prestaties van spraak-naar-tekst transcripties. Deze methode meet het percentage foutief voorspelde woorden tussen de werkelijke tekst (ground-truth) en de gegenereerde hypothese (hypothesis sentences). 
+De \gls{wil} ratio is een evaluatiemethode voor de prestaties van spraak-naar-tekst transcripties. Deze methode meet het percentage foutief voorspelde woorden tussen de referentie tekst 'ground-truth' en de gegenereerde hypothese (hypothesis sentences). 
 
 WIL varieert van 0 (geen fouten) tot 1 (geen correcte voorspellingen). Het is een beter alternatief dan de Word Error Rate \gls{wer} voor applicaties waarbij de hoeveelheid gecommuniceerde informatie belangrijker is dan de kosten van het maken van een bewerking.
 
-Dit komt omdat beide maten vergelijkbare scores geven wanneer de fouten laag zijn, wat aangeeft dat de theoretische basis van de WER niet altijd relevant is. De formule voor het berekenen van WIL is als volgt:
+Dit komt omdat beide maten vergelijkbare scores geven wanneer de fouten laag zijn, wat aangeeft dat de theoretische basis van de \gls{wer} niet altijd relevant is. De formule voor het berekenen van WIL is als volgt:
 
 
 \begin{equation}
@@ -311,43 +311,37 @@ Waarbij:
     \item $D$ Het aantal woordinvoegingen (insertions).
 \end{itemize}
 \subsection{Het belang van sampeling en data verzameling}
-Bij het evalueren van Automatische Spraakherkenning (ASR) systemen is het kiezen van de juiste monsters essentieel voor een nauwkeurige beoordeling. Het proces omvat de volgende stappen \autocite{awsmlblog2023}:
+Bij het evalueren van \gls{asr} systemen is het kiezen van de juiste steekproeven essentieel voor een nauwkeurige beoordeling. Het proces omvat de volgende stappen \autocite{awsmlblog2023}:
 
 \begin{enumerate}
     \item Kies een kleine steekproef van opgenomen spraak, zorgend voor diversiteit en representativiteit.
-    \item Transcribeer de monsters handmatig om referentietranscripten te maken.
-    \item Verwerk deze monsters door de ASR-service.
-    \item Normaliseer de door ASR gegenereerde hypothese transcripten voor consistentie.
-    \item Bereken de Word Error Rate (WER) met een open-source tool.
+    \item Transcribeer de steekproeven handmatig om referentietranscripten te maken.
+    \item Verwerk deze steekproeven door de \gls{asr}-service.
+    \item Normaliseer de door \gls{asr} gegenereerde hypothese transcripten voor consistentie.
+    \item Bereken de \gls{wer} met een open-source tool.
     \item Maak beoordelingen op basis van relevante metrieken.
 \end{enumerate}
 
 Het is belangrijk om uitspraken zorgvuldig te selecteren om vooringenomenheid te vermijden en een verscheidenheid aan spraakcontexten op te nemen, zoals verschillende geluidsniveaus, sprekers en accenten \autocite{awsmlblog2023}.
 
 
-Zowel wanneer het gaat om het evalueren van automatische spraakherkennings (ASR) systemen als in andere onderzoeksgebieden, spelen steekproeftechnieken een cruciale rol. Hierbij worden verschillende methoden toegepast om ervoor te zorgen dat de verzamelde gegevens een nauwkeurige representatie vormen van de diversiteit aan spraakpatronen en omgevingsomstandigheden die in de echte wereld worden aangetroffen \autocite{huggingface2023asr}:
+Zowel wanneer het gaat om het evalueren \gls{asr} systemen als in andere onderzoeksgebieden, spelen steekproeftechnieken een cruciale rol. Hierbij worden verschillende methoden toegepast om ervoor te zorgen dat de verzamelde gegevens een nauwkeurige representatie vormen van de diversiteit aan spraakpatronen en omgevingsomstandigheden die in de echte wereld worden aangetroffen \autocite{huggingface2023asr}:
 \begin{enumerate}[label=\arabic*.]
  
     \item \textbf{Willekeurige Steekproef:}
         Bij willekeurige steekproeven worden voorbeelden willekeurig geselecteerd uit de gehele populatie van belang.Dit zorgt ervoor dat alle spraakpatronen en omgevingsomstandigheden een gelijke kans krijgen om te worden opgenomen in het evaluatie dataset.
         
     \item \textbf{Gestratificeerde Steekproef:}
-        Gestratificeerde steekproeven verdelen de populatie in subgroepen op basis van criteria zoals sprekerskenmerken of omgevingsfactoren. Voorbeelden worden willekeurig geselecteerd uit elke subgroep, wat een evenredige vertegenwoordiging garandeert. Dit maakt gerichte evaluatie van ASR-prestaties mogelijk over verschillende demografische of omgevingsfactoren.
+        Gestratificeerde steekproeven verdelen de populatie in subgroepen op basis van criteria zoals sprekerskenmerken of omgevingsfactoren. Voorbeelden worden willekeurig geselecteerd uit elke subgroep, wat een evenredige vertegenwoordiging garandeert. Dit maakt gerichte evaluatie van \gls{asr}-prestaties mogelijk over verschillende demografische of omgevingsfactoren.
         
     \item \textbf{Clustersteekproef:}
-        Clustersteekproeven verdelen de populatie in clusters, zoals geografische regio's of organisatorische eenheden, waarbij willekeurig clusters worden gekozen voor evaluatie. Binnen elk cluster worden alle monsters of een willekeurige subset ervan opgenomen. Hoewel handig voor natuurlijk gegroepeerde populaties, kan dit leiden tot minder diversiteit als er grote variaties tussen clusters zijn.
+        Clustersteekproeven verdelen de populatie in clusters, zoals geografische regio's of organisatorische eenheden, waarbij willekeurig clusters worden gekozen voor evaluatie. Binnen elk cluster worden alle steekproeven of een willekeurige subset ervan opgenomen. Hoewel handig voor natuurlijk gegroepeerde populaties, kan dit leiden tot minder diversiteit als er grote variaties tussen clusters zijn.
          
 \end{enumerate}
 
 
-%- Inleiding tot Evaluatiemethoden: Het belang van evaluatie in ASR. 
-%- Word Error Rate (WER): Basisconcept en beperkingen. 
-%- Beyond WER: Geavanceerdere evaluatiemethoden voor een completere beoordeling. 
-%- Evaluatie van Eigennamen en Specifieke Datasets: Het belang van nauwkeurigheid bij eigennamen en specifieke terminologie. 
-%- Bias en Diversiteit in Datasets: Uitdagingen en oplossingen voor bias en het waarborgen van diversiteit.  
-
-\section{Beschikbaar ASR evaluatie tools}
-\subsection{JIWER (Jitsi Word Error Rate):} JIWER vertegenwoordigt een efficiënte en gebruikersvriendelijke Python-bibliotheek, specifiek ontworpen voor het evalueren van prestaties van automatische spraakherkenningsystemen (ASR). Dit instrument faciliteert de kwantitatieve beoordeling van ASR-modellen door middel van diverse nauwkeurigheidsmetrieken, die cruciaal zijn voor het begrijpen en verbeteren van de betrouwbaarheid van spraak-naar-tekst conversies \autocite{jiwer2023}.
+\section{Beschikbaar \gls{asr} evaluatie tools}
+\subsection{JIWER (Jitsi Word Error Rate):} JIWER vertegenwoordigt een efficiënte en gebruikersvriendelijke Python-bibliotheek, specifiek ontworpen voor het evalueren van prestaties van \gls{asr} Dit instrument faciliteert de kwantitatieve beoordeling van \gls{asr}-modellen door middel van diverse nauwkeurigheidsmetrieken, die cruciaal zijn voor het begrijpen en verbeteren van de betrouwbaarheid van spraak-naar-tekst conversies \autocite{jiwer2023}.
 
 \subsection{Speech Recognition Evaluation:} De "Speech Recognition Evaluation" tool van Symbl.AI is een geavanceerde en toegankelijke hulpmiddel voor iedereen die werkt met spraak-naar-tekst of spraakherkenningssystemen. Deze tool stelt gebruikers in staat om de nauwkeurigheid van automatische transcripties, gegenereerd door spraakherkenningssoftware, te vergelijken met transcripties gemaakt door mensen. Dit is cruciaal voor ontwikkelaars, onderzoekers, en gebruikers die de prestaties van hun spraak-naar-tekstsystemen willen evalueren en verbeteren \autocite{speechrecognitionevaluation2021}.
 
@@ -355,11 +349,4 @@ Zowel wanneer het gaat om het evalueren van automatische spraakherkennings (ASR)
 
 In mijn onderzoek richt ik mij op het evalueren van spraak-naar-tekst modellen met als doel de transcriptie van 'Secondary Babytalk' te verbeteren voor nauwkeurigere communicatie binnen de zorgsector. Dit streven naar grotere accuratesse in transcripties is essentieel om misverstanden te voorkomen en de dialoog tussen zorgverleners en oudere patiënten te optimaliseren. Door de meest effectieve modellen te identificeren en toe te passen, beoog ik een significante verbetering in de kwaliteit van zorgcommunicatie te realiseren. Daarnaast zal er een Proof of Concept (POC) worden geïmplementeerd die het geselecteerde model zal adapteren en gebruiken voor transcriptie doeleinden.
 
-
-%Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
-%Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
-
-%\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
-
-%Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
